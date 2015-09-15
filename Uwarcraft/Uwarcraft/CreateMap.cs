@@ -8,7 +8,16 @@ namespace Uwarcraft
 {
     class CreateMap
     {
-        private char MapRepresentation;
-        private int Resources;
+
+        public int mapsize
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
     }
 }
