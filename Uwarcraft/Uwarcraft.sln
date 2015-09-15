@@ -5,6 +5,11 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uwarcraft", "Uwarcraft\Uwarcraft.csproj", "{5F24C99F-E148-442B-ABDF-106B5A27EF23}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{93DF8BBB-E1D9-4C72-875A-B896601C2EFC}"
+	ProjectSection(SolutionItems) = preProject
+		Login.cs = Login.cs
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
