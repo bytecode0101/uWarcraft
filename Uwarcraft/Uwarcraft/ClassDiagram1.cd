@@ -7,5 +7,12 @@
       <FileName>Class1.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="Uwarcraft.CreateMap">
+    <Position X="2.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CreateMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
