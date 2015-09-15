@@ -8,5 +8,6 @@ namespace Uwarcraft
 {
     class CreateBuilding
     {
+        //asdf
     }
 }
