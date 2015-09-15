@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Uwarcraft
 {
+    /// <summary>
+    /// 
+    /// </summary>
     class IssueOrder
     {
     }
