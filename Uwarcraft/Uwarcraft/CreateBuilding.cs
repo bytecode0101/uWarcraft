@@ -8,6 +8,7 @@ namespace Uwarcraft
 {
     class CreateBuilding
     {
+
         private uint resourcesRequired;
         private bool isBuilt;
         private int validPosition;
