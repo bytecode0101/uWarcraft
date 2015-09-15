@@ -11,7 +11,5 @@ namespace Uwarcraft
     /// </summary>
     class IssueOrder
     {
-//
-
     }
 }
