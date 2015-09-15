@@ -12,7 +12,6 @@ namespace Uwarcraft
         private uint resourcesRequired;
         private bool isBuilt;
         private int validPosition;
-        //asdf
 
     }
 }

@@ -21,11 +21,11 @@
       <FileName>CreateBase.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Uwarcraft.UpgradeBase">
+  <Class Name="Uwarcraft.UpgradeBuilding">
     <Position X="6.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>UpgradeBase.cs</FileName>
+      <FileName>UpgradeBuilding.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
