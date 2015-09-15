@@ -8,5 +8,7 @@ namespace Uwarcraft
 {
     class CreateMap
     {
+        private char MapRepresentation;
+        private int Resources;
     }
 }
