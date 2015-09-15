@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="CreateBuilding.cs" />
+    <Compile Include="IssueOrder.cs" />
     <Compile Include="CreateMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -56,4 +58,4 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-</Project>
+ </Project>
