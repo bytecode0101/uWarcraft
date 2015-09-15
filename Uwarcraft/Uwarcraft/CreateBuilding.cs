@@ -8,7 +8,10 @@ namespace Uwarcraft
 {
     class CreateBuilding
     {
-        //asdf
-        
+
+        private uint resourcesRequired;
+        private bool isBuilt;
+        private int validPosition;
+
     }
 }

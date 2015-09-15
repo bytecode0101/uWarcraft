@@ -41,11 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="CreateBase.cs" />
     <Compile Include="CreateMap.cs" />
     <Compile Include="CreateBuilding.cs" />
     <Compile Include="IssueOrder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UpgradeBuilding.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />
@@ -58,4 +59,4 @@
   <Target Name="AfterBuild">
   </Target>
   -->
- </Project>
+</Project>
