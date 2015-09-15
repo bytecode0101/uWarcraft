@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Uwarcraft
 {
-    public class UpgradeBase
+    public class UpgradeBuilding
     {
     }
 }

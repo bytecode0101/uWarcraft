@@ -47,7 +47,7 @@
     <Compile Include="CreateBuilding.cs" />
     <Compile Include="IssueOrder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UpgradeBase.cs" />
+    <Compile Include="UpgradeBuilding.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />
