@@ -8,7 +8,7 @@ namespace Uwarcraft
     /// <summary>
     /// 
     /// </summary>
-    public class CreateBase
+    public class CreateBase : CreateBuilding
     {
        
     }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Uwarcraft
 {
-    class CreateBuilding
+    public class CreateBuilding
     {
 
         private uint resourcesRequired;
