@@ -9,7 +9,8 @@ namespace Uwarcraft
     /// <summary>
     /// 
     /// </summary>
-    class IssueOrder
+    class issueOrder
     {
+
     }
 }
