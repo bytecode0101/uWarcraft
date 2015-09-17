@@ -11,6 +11,7 @@ namespace Uwarcraft
         private int unitHealth;
         private int unitSpeed;
         private int unitDamage;
+        private int position;
 
         public void attack()
         {
