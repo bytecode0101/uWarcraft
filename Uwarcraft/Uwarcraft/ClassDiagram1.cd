@@ -22,7 +22,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Uwarcraft.UpgradeBuilding">
-    <Position X="2.5" Y="3.25" Width="2.25" />
+    <Position X="2.5" Y="3.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAgAAAAAAAA=</HashCode>
       <FileName>UpgradeBuilding.cs</FileName>
@@ -38,7 +38,7 @@
   <Class Name="Uwarcraft.BaseUnit">
     <Position X="7.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAEA=</HashCode>
+      <HashCode>AAAAAQAABAAAQACAAAEQIAAAACAgAACAAAAAAAAAAAA=</HashCode>
       <FileName>BaseUnit.cs</FileName>
     </TypeIdentifier>
   </Class>

@@ -14,40 +14,19 @@ namespace Uwarcraft
         private int validPosition;
         private int health;
 
-        public int startBuilding
+        public void startBuilding()
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
+            throw new System.NotImplementedException();
         }
 
-        public int pauseBuilding
+        public void pauseBuilding()
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
+            throw new System.NotImplementedException();
         }
 
-        public int destroyBuilding
+        public void destroyBuilding()
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
+            throw new System.NotImplementedException();
         }
     }
 }
