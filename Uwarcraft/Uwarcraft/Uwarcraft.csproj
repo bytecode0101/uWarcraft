@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Login.cs" />
     <Compile Include="MainBase.cs" />
     <Compile Include="CreateMap.cs" />
     <Compile Include="CreateBuilding.cs" />
@@ -48,6 +49,7 @@
     <Compile Include="IssueOrder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UpgradeBuilding.cs" />
+    <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />
