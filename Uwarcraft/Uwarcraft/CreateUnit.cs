@@ -5,11 +5,8 @@ using System.Text;
 
 namespace Uwarcraft
 {
-    /// <summary>
-    /// 
-    /// </summary>
-    public class CreateBase : CreateBuilding
+    public class CreateUnit
     {
-       
+        private int unitCost;
     }
 }

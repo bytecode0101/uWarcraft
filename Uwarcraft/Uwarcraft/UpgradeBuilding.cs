@@ -5,7 +5,20 @@ using System.Text;
 
 namespace Uwarcraft
 {
-    public class UpgradeBuilding
+    public class UpgradeBuilding : CreateBuilding
     {
+        private int cost;
+
+        public int upgradeBuilding
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
     }
 }
