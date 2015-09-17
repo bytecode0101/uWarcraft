@@ -9,16 +9,9 @@ namespace Uwarcraft
     {
         private int cost;
 
-        public int upgradeBuilding
+        public void upgradeBuilding()
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
+            throw new System.NotImplementedException();
         }
     }
 }
