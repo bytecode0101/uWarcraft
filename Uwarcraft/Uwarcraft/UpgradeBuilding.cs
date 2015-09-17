@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Uwarcraft
 {
-    public class UpgradeBuilding : CreateBuilding
+    public class UpgradeBuilding
     {
         private int cost;
 

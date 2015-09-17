@@ -12,7 +12,7 @@ namespace Uwarcraft
     {
         private int captured;
 
-        public int createUnits
+        public int constructUnits
         {
             get
             {
