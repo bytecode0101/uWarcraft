@@ -12,28 +12,14 @@ namespace Uwarcraft
     {
         private int captured;
 
-        public int constructUnits
+        public void constructUnits()
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
+            throw new System.NotImplementedException();
         }
 
-        public int upgradeUnits
+        public void upgradeUnits()
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
+            throw new System.NotImplementedException();
         }
     }
 }

@@ -12,64 +12,29 @@ namespace Uwarcraft
         private int unitSpeed;
         private int unitDamage;
 
-        public int moveUnit
+        public void attack()
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
+            throw new System.NotImplementedException();
         }
 
-        public int stopUnit
+        public void dismiss()
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
+            throw new System.NotImplementedException();
         }
 
-        public int attack
+        public void guard()
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
+            throw new System.NotImplementedException();
         }
 
-        public int guard
+        public void move()
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
+            throw new System.NotImplementedException();
         }
 
-        public int dismiss
+        public void stop()
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
+            throw new System.NotImplementedException();
         }
     }
 }
