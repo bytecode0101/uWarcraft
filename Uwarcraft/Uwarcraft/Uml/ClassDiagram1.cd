@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Uwarcraft.Game.Game">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAABAAAAAAAAAAAAAAAAAgAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Game\Game.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="map" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="players" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Uwarcraft.Game.Map" Collapsed="true">
+    <Position X="3" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Game\Map.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Uwarcraft.Game.Player">
+    <Position X="3" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Game\Player.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="ownMap" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Uwarcraft.Buildings.BasicBuildings.Farm" Collapsed="true">
+    <Position X="4.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Buildings\BasicBuildings\Farm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Uwarcraft.Buildings.WarBuildings.Barrack" Collapsed="true">
+    <Position X="6" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Buildings\WarBuildings\Barrack.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Uwarcraft.Buildings.WarBuildings.Tower" Collapsed="true">
+    <Position X="7.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Buildings\WarBuildings\Tower.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Uwarcraft.Game.PlayerMap">
+    <Position X="5.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Game\PlayerMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Uwarcraft.Buildings.Interfaces.AbstractBuilding">
+    <Position X="9" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAEAAAAAABAAA=</HashCode>
+      <FileName>Buildings\Interfaces\AbstractBuilding.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Uwarcraft.Buildings.BuildingUpgrades.BuildingUpgradeDecorator" Collapsed="true">
+    <Position X="10" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>Buildings\BuildingUpgrades\BuildingUpgradeDecorator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Uwarcraft.Buildings.BuildingUpgrades.FirstLevelUpgrade" Collapsed="true">
+    <Position X="8.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Buildings\BuildingUpgrades\FirstLevelUpgrade.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Uwarcraft.Buildings.BuildingUpgrades.SeconLevelUpgrade" Collapsed="true">
+    <Position X="11" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Buildings\BuildingUpgrades\SeconLevelUpgrade.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Uwarcraft.Buildings.IBuilding">
+    <Position X="6" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>Buildings\Interfaces\IBuilding.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

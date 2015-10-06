@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Uwarcraft
 {
-   public interface Login
+    public interface Login
     {
         bool AddUser(List<User> user, string Nume, string password);
         
