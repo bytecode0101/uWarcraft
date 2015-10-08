@@ -11,6 +11,5 @@ namespace Uwarcraft.Game.StateMachine
         AbstractState NextState { get; set; }
         public abstract void Run();
         
-         
     }
 }

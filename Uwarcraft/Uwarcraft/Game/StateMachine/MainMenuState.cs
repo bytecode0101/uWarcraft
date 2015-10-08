@@ -1,5 +1,5 @@
 ﻿using System;
-
+using Uwarcraft.Game;
 
 
 namespace Uwarcraft.Game.StateMachine
@@ -9,6 +9,7 @@ namespace Uwarcraft.Game.StateMachine
         private AbstractState NewGameState;
         private AbstractState ContinueGameState;
         private AbstractState HelpState;
+        
 
         public MainMenuState()
         {
@@ -17,16 +18,26 @@ namespace Uwarcraft.Game.StateMachine
             HelpState = new HelpGameState();
 
             Game DemoGame = new Game();
-            
+
         }
-        
+
         public override void Run()
         {
-            Console.WriteLine("State: " + this.GetType().ToString());
             
+            Console.WriteLine("State: " + this.GetType().ToString());
+
             var ceva = Console.ReadLine();
-            if(ceva == "1") {
+            if (ceva == "1")
+            {
+
                 GoToNewGameState();
+            }
+            else
+            {
+                if (ceva == "2")
+                {
+                    GoToHelpGameState();
+                }
             }
 
         }
@@ -34,15 +45,15 @@ namespace Uwarcraft.Game.StateMachine
         public void GoToNewGameState()
         {
             NewGameState.Run();
-
         }
+
         public void ContinueGame()
         {
 
         }
-        public void HelpGameState()
+        public void GoToHelpGameState()
         {
-
+            HelpState.Run();
         }
 
     }

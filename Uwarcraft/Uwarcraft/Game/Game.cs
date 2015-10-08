@@ -7,6 +7,8 @@ namespace Uwarcraft.Game
     public class Game
     {
         public AbstractState CurrentState { get; set; }
+        public AbstractState PreviousState { get; set; }
+
         private List<Player> players;
         private Map map;
 

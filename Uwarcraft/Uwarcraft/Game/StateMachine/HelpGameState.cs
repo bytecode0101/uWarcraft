@@ -2,7 +2,7 @@
 
 namespace Uwarcraft.Game.StateMachine
 {
-    internal class HelpGameState : AbstractState
+    public class HelpGameState : AbstractState
     {
         public override void Run()
         {
