@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+
 
 namespace Uwarcraft.Game.StateMachine
 {
@@ -18,16 +16,24 @@ namespace Uwarcraft.Game.StateMachine
             ContinueGameState = new ContinueGameState();
             HelpState = new HelpGameState();
 
+            Game DemoGame = new Game();
+            
         }
-
-
+        
         public override void Run()
         {
             Console.WriteLine("State: " + this.GetType().ToString());
+            
+            var ceva = Console.ReadLine();
+            if(ceva == "1") {
+                GoToNewGameState();
+            }
+
         }
 
         public void GoToNewGameState()
         {
+            NewGameState.Run();
 
         }
         public void ContinueGame()
@@ -41,5 +47,5 @@ namespace Uwarcraft.Game.StateMachine
 
     }
 
-   
+
 }

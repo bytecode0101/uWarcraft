@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using Uwarcraft.Buildings;
+using Uwarcraft.Buildings.BasicBuildings;
 
 namespace TestUwarcraft
 {
