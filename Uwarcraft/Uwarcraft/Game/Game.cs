@@ -1,9 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using Uwarcraft.Game.StateMachine;
 
 namespace Uwarcraft.Game
 {
-    class Game
+    public class Game
     {
+        public AbstractState CurrentState { get; set; }
         private List<Player> players;
         private Map map;
 
@@ -18,6 +21,11 @@ namespace Uwarcraft.Game
             {
                 map = value;
             }
+        }
+
+        public void Run()
+        {
+            CurrentState.Run();
         }
 
         internal List<Player> Players

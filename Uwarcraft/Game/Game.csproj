@@ -4,16 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5F24C99F-E148-442B-ABDF-106B5A27EF23}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{33BD87AB-6B6D-4C09-A6D1-365B2DAA8896}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Uwarcraft</RootNamespace>
-    <AssemblyName>Uwarcraft</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <RootNamespace>Game</RootNamespace>
+    <AssemblyName>Game</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -41,40 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Buildings\BasicBuildings\Farm.cs" />
-    <Compile Include="Buildings\BuildingUpgrades\BuildingUpgradeDecorator.cs" />
-    <Compile Include="Buildings\BuildingUpgrades\FirstLevelUpgrade.cs" />
-    <Compile Include="Buildings\BuildingUpgrades\SeconLevelUpgrade.cs" />
-    <Compile Include="Buildings\Interfaces\AbstractBuilding.cs" />
-    <Compile Include="Buildings\Interfaces\BuildingCost.cs" />
-    <Compile Include="Buildings\WarBuildings\Barrack.cs" />
-    <Compile Include="Buildings\Interfaces\IBuilding.cs" />
-    <Compile Include="Buildings\WarBuildings\Tower.cs" />
-    <Compile Include="Game\Game.cs" />
-    <Compile Include="Game\Map.cs" />
-    <Compile Include="Game\Player.cs" />
-    <Compile Include="Game\StateMachine\AbstractState.cs" />
-    <Compile Include="Game\StateMachine\ContinueGameState.cs" />
-    <Compile Include="Game\StateMachine\HelpGameState.cs" />
-    <Compile Include="Game\StateMachine\MainMenuState.cs" />
-    <Compile Include="Game\StateMachine\NewGameState.cs" />
-    <Compile Include="Login.cs" />
-    <Compile Include="MainBase.cs" />
-    <Compile Include="CreateMap.cs" />
-    <Compile Include="CreateBuilding.cs" />
-    <Compile Include="BaseUnit.cs" />
-    <Compile Include="IssueOrder.cs" />
-    <Compile Include="Game\PlayerMap.cs" />
+    <Compile Include="DemoGame.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UpgradeBuilding.cs" />
-    <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
-    <None Include="Uml\ClassDiagram1.cd" />
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Units\" />
+    <ProjectReference Include="..\Uwarcraft\Uwarcraft.csproj">
+      <Project>{5f24c99f-e148-442b-abdf-106b5a27ef23}</Project>
+      <Name>Uwarcraft</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
