@@ -12,9 +12,7 @@ namespace DemoGame
     {
         static void Main(string[] args)
         {
-            Game g = new Game();
-            g.CurrentState = new MainMenuState();
-            g.Run();
+            Game g = new Game(new MainMenu());
             Console.ReadLine();
         }
     }

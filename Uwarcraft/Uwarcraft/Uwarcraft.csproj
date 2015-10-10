@@ -50,9 +50,15 @@
     <Compile Include="Buildings\WarBuildings\Barrack.cs" />
     <Compile Include="Buildings\Interfaces\IBuilding.cs" />
     <Compile Include="Buildings\WarBuildings\Tower.cs" />
-    <Compile Include="Game\Game.cs" />
     <Compile Include="Game\Map.cs" />
     <Compile Include="Game\Player.cs" />
+    <Compile Include="Game\StateMachine\ContinueGame.cs" />
+    <Compile Include="Game\StateMachine\Game.cs" />
+    <Compile Include="Game\StateMachine\HelpGame.cs" />
+    <Compile Include="Game\StateMachine\MainMenu.cs" />
+    <Compile Include="Game\StateMachine\NewGame.cs" />
+    <Compile Include="Game\StateMachine\AbstractState.cs" />
+    <Compile Include="Game\StateMachine\StateEventArgs.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="MainBase.cs" />
     <Compile Include="CreateMap.cs" />
@@ -69,7 +75,6 @@
     <None Include="Uml\ClassDiagram1.cd" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Game\StateMachine\" />
     <Folder Include="Units\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
