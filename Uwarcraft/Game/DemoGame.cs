@@ -12,7 +12,7 @@ namespace DemoGame
     {
         static void Main(string[] args)
         {
-            Game g = new Game(new MainMenu());
+            Game g = new Game(new MainMenuState());
             Console.ReadLine();
         }
     }

@@ -53,11 +53,11 @@
     <Compile Include="Game\Map.cs" />
     <Compile Include="Game\Player.cs" />
     <Compile Include="Game\Point.cs" />
-    <Compile Include="Game\StateMachine\ContinueGame.cs" />
+    <Compile Include="Game\StateMachine\ContinueGameState.cs" />
     <Compile Include="Game\StateMachine\Game.cs" />
-    <Compile Include="Game\StateMachine\HelpGame.cs" />
-    <Compile Include="Game\StateMachine\MainMenu.cs" />
-    <Compile Include="Game\StateMachine\NewGame.cs" />
+    <Compile Include="Game\StateMachine\HelpGameState.cs" />
+    <Compile Include="Game\StateMachine\MainMenuState.cs" />
+    <Compile Include="Game\StateMachine\NewGameState.cs" />
     <Compile Include="Game\StateMachine\AbstractState.cs" />
     <Compile Include="Game\StateMachine\StateEventArgs.cs" />
     <Compile Include="Login.cs" />

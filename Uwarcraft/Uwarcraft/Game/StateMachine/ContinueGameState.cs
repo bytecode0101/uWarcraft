@@ -2,7 +2,7 @@
 
 namespace Uwarcraft.Game.StateMachine
 {
-    public class ContinueGame : AbstractState
+    public class ContinueGameState : AbstractState
     {
         public override event StateFinished StateFinishedEventHandler;
 
@@ -12,7 +12,7 @@ namespace Uwarcraft.Game.StateMachine
             Console.ReadLine();
             if (StateFinishedEventHandler!=null)
             {
-                StateFinishedEventHandler.Invoke(this, new StateEventArgs() { NextState = new MainMenu() });
+                StateFinishedEventHandler.Invoke(this, new StateEventArgs() { NextState = new MainMenuState() });
             }
             //game.CurentState = new MainMenu();
             //game.Do();

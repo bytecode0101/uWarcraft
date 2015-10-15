@@ -48,7 +48,7 @@
   <Class Name="Uwarcraft.Buildings.Interfaces.AbstractBuilding">
     <Position X="14.75" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAEAAAAAABAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAABAAAAAAAAAAEAAAAAABAAA=</HashCode>
       <FileName>Buildings\Interfaces\AbstractBuilding.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -137,11 +137,11 @@
       <FileName>Game\StateMachine\AbstractState.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Uwarcraft.Game.StateMachine.ContinueGame" Collapsed="true">
+  <Class Name="Uwarcraft.Game.StateMachine.ContinueGameState" Collapsed="true">
     <Position X="15.75" Y="9.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAI=</HashCode>
-      <FileName>Game\StateMachine\ContinueGame.cs</FileName>
+      <FileName>Game\StateMachine\ContinueGameState.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Uwarcraft.Game.StateMachine.Game">
@@ -151,25 +151,25 @@
       <FileName>Game\StateMachine\Game.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Uwarcraft.Game.StateMachine.HelpGame" Collapsed="true">
+  <Class Name="Uwarcraft.Game.StateMachine.HelpGameState" Collapsed="true">
     <Position X="9.5" Y="9.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAI=</HashCode>
-      <FileName>Game\StateMachine\HelpGame.cs</FileName>
+      <FileName>Game\StateMachine\HelpGameState.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Uwarcraft.Game.StateMachine.MainMenu" Collapsed="true">
+  <Class Name="Uwarcraft.Game.StateMachine.MainMenuState" Collapsed="true">
     <Position X="11.5" Y="9.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAACAAAAAAAAAAAAAACAAAAAAAAAAAAI=</HashCode>
-      <FileName>Game\StateMachine\MainMenu.cs</FileName>
+      <FileName>Game\StateMachine\MainMenuState.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Uwarcraft.Game.StateMachine.NewGame" Collapsed="true">
+  <Class Name="Uwarcraft.Game.StateMachine.NewGameState" Collapsed="true">
     <Position X="13.5" Y="9.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAACAAAAAAAAAAAAAACAAAAAAAAAAAAI=</HashCode>
-      <FileName>Game\StateMachine\NewGame.cs</FileName>
+      <FileName>Game\StateMachine\NewGameState.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Uwarcraft.Game.StateMachine.StateEventArgs">
@@ -196,7 +196,7 @@
   <Delegate Name="Uwarcraft.Game.StateMachine.StateFinished">
     <Position X="13" Y="11.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAABAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQBAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Game\StateMachine\AbstractState.cs</FileName>
     </TypeIdentifier>
   </Delegate>

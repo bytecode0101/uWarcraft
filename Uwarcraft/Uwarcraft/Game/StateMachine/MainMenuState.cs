@@ -1,36 +1,39 @@
 ﻿using System;
 
+
 namespace Uwarcraft.Game.StateMachine
 {
-    public class NewGame : AbstractState
+    public class MainMenuState : AbstractState
     {
         public override event StateFinished StateFinishedEventHandler;
         AbstractState nextState;
         public override void Run()
-        {
-            Console.WriteLine("game no yet implemented, press enter to go to another state randomly picked");
-            Console.ReadLine();
-            Random rnd = new Random();
-            int dice = rnd.Next(0, 3);
-            
-            switch (dice)
+        {            
+            Console.WriteLine("Main menu, 1=NewGame, 2=ContinueGame, 3=Help");
+            var ceva = Console.ReadLine();
+            switch (ceva)
             {
-                case 0:
+                case "1":
                     {
-                        nextState = new MainMenu();
+                        nextState = new NewGameState();
                         //game.Do();
                         break;
                     }
-                case 1:
+                case "2":
                     {
-                        nextState = new ContinueGame();
+                        nextState = new ContinueGameState();
                         //game.Do();
                         break;
                     }
-                case 2:
+                case "3":
                     {
-                        nextState = new HelpGame();
+                        nextState = new HelpGameState();
                         //game.Do();
+                        break;
+                    }
+                default:
+                    {
+                        Run();
                         break;
                     }
             }
@@ -38,7 +41,9 @@ namespace Uwarcraft.Game.StateMachine
             {
                 StateFinishedEventHandler.Invoke(this, new StateEventArgs() { NextState = nextState });
             }
+        }       
 
-        }
     }
+
+
 }
