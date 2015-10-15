@@ -1,4 +1,4 @@
-﻿namespace Uwarcraft
+﻿namespace Uwarcraft.Units
 {
     public class BaseUnit
     {

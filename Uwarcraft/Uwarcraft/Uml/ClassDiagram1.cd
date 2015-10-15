@@ -21,7 +21,7 @@
     <Position X="11" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Buildings\BasicBuildings\Farm.cs</FileName>
+      <FileName>Buildings\BasicBuildings\OldFarm.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Uwarcraft.Buildings.WarBuildings.Barrack" Collapsed="true">
@@ -74,11 +74,11 @@
       <FileName>Buildings\BuildingUpgrades\SeconLevelUpgrade.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Uwarcraft.BaseUnit" Collapsed="true">
+  <Class Name="Uwarcraft.Units.BaseUnit" Collapsed="true">
     <Position X="20.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAQAABAAAQACAAAEQIAAAACAgAACAAAAAAAAAAAA=</HashCode>
-      <FileName>BaseUnit.cs</FileName>
+      <FileName>Units\BaseUnit.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Uwarcraft.CreateBuilding">

@@ -41,7 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Buildings\BasicBuildings\Farm.cs" />
+    <Compile Include="Units\AbstractBuildBuildingCapability.cs" />
+    <Compile Include="Units\AbstractBuildUnitCapability.cs" />
+    <Compile Include="Units\Bowman.cs" />
+    <Compile Include="Units\BowWorkshop.cs" />
+    <Compile Include="Units\BuildArcherCapability.cs" />
+    <Compile Include="Units\BuildBarracksCapability.cs" />
+    <Compile Include="Units\BuildFarmCapability.cs" />
+    <Compile Include="Buildings\BasicBuildings\OldFarm.cs" />
     <Compile Include="Buildings\BuildingUpgrades\BuildingUpgradeDecorator.cs" />
     <Compile Include="Buildings\BuildingUpgrades\FirstLevelUpgrade.cs" />
     <Compile Include="Buildings\BuildingUpgrades\SeconLevelUpgrade.cs" />
@@ -50,6 +57,8 @@
     <Compile Include="Buildings\WarBuildings\Barrack.cs" />
     <Compile Include="Buildings\Interfaces\IBuilding.cs" />
     <Compile Include="Buildings\WarBuildings\Tower.cs" />
+    <Compile Include="Units\BuildPeasantCapability.cs" />
+    <Compile Include="Units\Farm.cs" />
     <Compile Include="Game\Map.cs" />
     <Compile Include="Game\Player.cs" />
     <Compile Include="Game\Point.cs" />
@@ -64,20 +73,24 @@
     <Compile Include="MainBase.cs" />
     <Compile Include="CreateMap.cs" />
     <Compile Include="CreateBuilding.cs" />
-    <Compile Include="BaseUnit.cs" />
+    <Compile Include="Units\BaseUnit.cs" />
     <Compile Include="IssueOrder.cs" />
     <Compile Include="Game\PlayerMap.cs" />
+    <Compile Include="Units\Peasant.cs" />
+    <Compile Include="Units\PlayerBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Units\IBuilding.cs" />
+    <Compile Include="Units\IUnit.cs" />
+    <Compile Include="Units\Barracks.cs" />
     <Compile Include="UpgradeBuilding.cs" />
     <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />
     <None Include="Uml\ClassDiagram1.cd" />
+    <None Include="Units\ClassDiagram1.cd" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Units\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

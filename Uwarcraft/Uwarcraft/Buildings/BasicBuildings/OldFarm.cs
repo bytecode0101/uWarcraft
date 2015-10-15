@@ -6,6 +6,7 @@ namespace Uwarcraft.Buildings.BasicBuildings
 {
     public class Farm : AbstractBuilding
     {
+
         public Farm(Point location,int life )
         {
             Cost = 100;
