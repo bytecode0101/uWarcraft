@@ -1,12 +1,13 @@
 ﻿namespace Uwarcraft.Units
 {
-    public class BaseUnit
+    public abstract class BaseUnit
     {
-        private int unitCost;
-        private int unitHealth;
-        private int unitSpeed;
-        private int unitDamage;
-        private int position;
+        public int unitCost { get; set; }
+        public int unitHealth { get; set; }
+        public int unitSpeed { get; set; }
+        public int unitDamageSuffered { get; set; }
+        public int unitAttackPower { get; set; }
+        public int position { get; set; }
 
         public void attack()
         {

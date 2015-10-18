@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Uwarcraft.Units
 {
     public delegate void BuildingComplete();
@@ -13,8 +14,8 @@ namespace Uwarcraft.Units
         event BuildingComplete BuildingComplete;
 
         List<AbstractBuildUnitCapability> BuildUnitCapabilities { get; set; }
+        List<AbstractBuildBuildingCapability> BuildBuildingsCapabilities { get; set; }       
 
-        List<AbstractBuildBuildingCapability> BuildBuildingsCapabilities { get; set; }
         void StartBuilding();
     }
 }

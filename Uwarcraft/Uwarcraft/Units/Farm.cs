@@ -5,27 +5,22 @@ using System.Text;
 
 namespace Uwarcraft.Units
 {
-    public class Farm : Units.IBuilding
+    public class Farm : Units.AbstractBuilding, IBuilding
     {
-        public List<AbstractBuildUnitCapability> BuildUnitCapabilities
-        {
-            get; set;
-        }
-
-        public List<AbstractBuildBuildingCapability> BuildBuildingsCapabilities
-        {
-            get; set;
-        }
-
         public event BuildingComplete BuildingComplete;
 
-        public Farm()
+        public List<AbstractBuildUnitCapability> BuildUnitCapabilities { get; set; }
+        public List<AbstractBuildBuildingCapability> BuildBuildingsCapabilities { get; set; }
+
+        public Farm(Game.Point location)
         {
             BuildBuildingsCapabilities = new List<AbstractBuildBuildingCapability>();
             BuildUnitCapabilities = new List<AbstractBuildUnitCapability>();
             BuildBuildingsCapabilities.Add(new BuildBarrackCapability());
+            Cost = 100;
+            Life = 100;
+            Location = location;
 
-            
         }
 
         public void StartBuilding()
@@ -36,6 +31,8 @@ namespace Uwarcraft.Units
                 BuildingComplete.Invoke();
             };
         }
+
+        
     }
 
 

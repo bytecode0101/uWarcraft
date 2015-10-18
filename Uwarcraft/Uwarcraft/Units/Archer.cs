@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Uwarcraft.Units
 {
-    public class Peasant : Units.IUnit
+    public class Archer : Units.IUnit
     {
         public int unitCost { get; set; }
         public int unitHealth { get; set; }
@@ -14,12 +14,12 @@ namespace Uwarcraft.Units
         public int unitAttackPower { get; set; }
         public Game.Point position { get; set; }
 
-        public Peasant (Game.Point xy)
+        public Archer(Game.Point xy)
         {
             position = xy;
-            unitHealth = 20;
+            unitHealth = 30;
             unitSpeed = 1;
-            unitAttackPower = 1;
+            unitAttackPower = 4;
         }
 
         public void Attack(IUnit target)

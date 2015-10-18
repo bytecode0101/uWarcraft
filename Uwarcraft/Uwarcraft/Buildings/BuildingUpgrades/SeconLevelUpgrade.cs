@@ -9,7 +9,7 @@ namespace Uwarcraft.Buildings.BuildingUpgrades
 {
     class SeconLevelUpgrade : BuildingUpgradeDecorator
     {
-        public SeconLevelUpgrade(AbstractBuilding building) : base(building)
+        public SeconLevelUpgrade(OldAbstractBuilding building) : base(building)
         {
             
         }

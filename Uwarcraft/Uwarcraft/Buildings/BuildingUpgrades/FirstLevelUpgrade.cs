@@ -9,7 +9,7 @@ namespace Uwarcraft.Buildings.BuildingUpgrades
 {
     class FirstLevelUpgrade : BuildingUpgradeDecorator
     {
-        public FirstLevelUpgrade(AbstractBuilding building) : base(building)
+        public FirstLevelUpgrade(OldAbstractBuilding building) : base(building)
         {
             Cost = base.Cost * 2;
         }

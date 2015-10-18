@@ -8,19 +8,9 @@ namespace Uwarcraft.Units
 {
     public abstract class AbstractBuildBuildingCapability
     {
-        public string Description
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
+        public string Description { get; set; }
 
-            set
-            {
-            }
-        }
-
-        public abstract IBuilding Build();
+        public abstract IBuilding Build(Game.Point xy);
         
         
     }

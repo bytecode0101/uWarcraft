@@ -5,39 +5,32 @@ using System.Text;
 
 namespace Uwarcraft.Units
 {
-    public class BowWorkshop : Units.IBuilding
+    public class BowWorkshop : Units.AbstractBuilding, IBuilding
     {
-        public List<AbstractBuildBuildingCapability> BuildBuildingsCapabilities
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public List<AbstractBuildUnitCapability> BuildUnitCapabilities
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
         public event BuildingComplete BuildingComplete;
+
+        public List<AbstractBuildUnitCapability> BuildUnitCapabilities { get; set; }
+        public List<AbstractBuildBuildingCapability> BuildBuildingsCapabilities { get; set; }
+
+        public BowWorkshop(Game.Point location)
+        {
+            BuildBuildingsCapabilities = new List<AbstractBuildBuildingCapability>();
+            BuildUnitCapabilities = new List<AbstractBuildUnitCapability>();
+            //BuildBuildingsCapabilities.Add(new BuildBowWorkshopCapability());
+            BuildUnitCapabilities.Add(new BuildPeasantCapability());
+            Cost = 100;
+            Life = 100;
+            Location = location;
+
+        }
 
         public void StartBuilding()
         {
-            throw new NotImplementedException();
-        }
+            if (BuildingComplete != null)
+            {
+
+                BuildingComplete.Invoke();
+            };
+        }        
     }
 }

@@ -7,9 +7,9 @@ namespace Uwarcraft.Units
 {
     public class BuildFarmCapability : AbstractBuildBuildingCapability
     {
-        public override IBuilding Build()
-        {
-            return new Farm();
+        public override IBuilding Build(Game.Point xy)
+        {            
+            return new Farm(xy);
         }
     }
 }

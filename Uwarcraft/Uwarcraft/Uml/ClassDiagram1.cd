@@ -17,21 +17,21 @@
       <Field Name="ownMap" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="Uwarcraft.Buildings.BasicBuildings.Farm" Collapsed="true">
+  <Class Name="Uwarcraft.Buildings.BasicBuildings.Farm">
     <Position X="11" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Buildings\BasicBuildings\OldFarm.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Uwarcraft.Buildings.WarBuildings.Barrack" Collapsed="true">
+  <Class Name="Uwarcraft.Buildings.WarBuildings.Barrack">
     <Position X="12.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Buildings\WarBuildings\Barrack.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Uwarcraft.Buildings.WarBuildings.Tower" Collapsed="true">
+  <Class Name="Uwarcraft.Buildings.WarBuildings.Tower">
     <Position X="14.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
@@ -74,10 +74,10 @@
       <FileName>Buildings\BuildingUpgrades\SeconLevelUpgrade.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Uwarcraft.Units.BaseUnit" Collapsed="true">
+  <Class Name="Uwarcraft.Units.BaseUnit">
     <Position X="20.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAQAABAAAQACAAAEQIAAAACAgAACAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAQAAAAAAQACAAAEQIABAACAgAACAAAAAAAQAAAA=</HashCode>
       <FileName>Units\BaseUnit.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -95,7 +95,7 @@
       <FileName>CreateMap.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Uwarcraft.issueOrder" Collapsed="true">
+  <Class Name="Uwarcraft.issueOrder">
     <Position X="22" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
@@ -117,27 +117,27 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Uwarcraft.User">
-    <Position X="22.5" Y="5" Width="1.5" />
+    <Position X="21" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAEAAACAAAAAgAAAAA=</HashCode>
       <FileName>User.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Uwarcraft.Buildings.Interfaces.BuildingCost" Collapsed="true">
-    <Position X="20.25" Y="1.5" Width="1.5" />
+  <Class Name="Uwarcraft.Buildings.Interfaces.BuildingCost">
+    <Position X="22" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Buildings\Interfaces\BuildingCost.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Uwarcraft.Game.StateMachine.AbstractState" Collapsed="true">
-    <Position X="12.25" Y="8.5" Width="1.5" />
+  <Class Name="Uwarcraft.Game.StateMachine.AbstractState">
+    <Position X="12.25" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAI=</HashCode>
       <FileName>Game\StateMachine\AbstractState.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Uwarcraft.Game.StateMachine.ContinueGameState" Collapsed="true">
+  <Class Name="Uwarcraft.Game.StateMachine.ContinueGameState">
     <Position X="15.75" Y="9.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAI=</HashCode>
@@ -151,21 +151,21 @@
       <FileName>Game\StateMachine\Game.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Uwarcraft.Game.StateMachine.HelpGameState" Collapsed="true">
+  <Class Name="Uwarcraft.Game.StateMachine.HelpGameState">
     <Position X="9.5" Y="9.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAI=</HashCode>
       <FileName>Game\StateMachine\HelpGameState.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Uwarcraft.Game.StateMachine.MainMenuState" Collapsed="true">
+  <Class Name="Uwarcraft.Game.StateMachine.MainMenuState">
     <Position X="11.5" Y="9.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAACAAAAAAAAAAAAAACAAAAAAAAAAAAI=</HashCode>
       <FileName>Game\StateMachine\MainMenuState.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Uwarcraft.Game.StateMachine.NewGameState" Collapsed="true">
+  <Class Name="Uwarcraft.Game.StateMachine.NewGameState">
     <Position X="13.5" Y="9.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAACAAAAAAAAAAAAAACAAAAAAAAAAAAI=</HashCode>
@@ -173,7 +173,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Uwarcraft.Game.StateMachine.StateEventArgs">
-    <Position X="11" Y="11" Width="1.5" />
+    <Position X="10.75" Y="12" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Game\StateMachine\StateEventArgs.cs</FileName>
@@ -194,7 +194,7 @@
     </TypeIdentifier>
   </Interface>
   <Delegate Name="Uwarcraft.Game.StateMachine.StateFinished">
-    <Position X="13" Y="11.25" Width="1.5" />
+    <Position X="12.75" Y="12" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQBAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Game\StateMachine\AbstractState.cs</FileName>

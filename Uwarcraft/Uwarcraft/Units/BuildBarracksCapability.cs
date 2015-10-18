@@ -7,9 +7,9 @@ namespace Uwarcraft.Units
 {
     public class BuildBarrackCapability : AbstractBuildBuildingCapability
     {
-        public override IBuilding Build()
-        {
-            throw new NotImplementedException();
+        public override IBuilding Build(Game.Point xy)
+        {            
+            return new Barrack(xy);
         }
     }
 }
