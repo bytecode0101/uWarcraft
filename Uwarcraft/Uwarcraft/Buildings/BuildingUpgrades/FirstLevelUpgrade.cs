@@ -7,11 +7,11 @@ using Uwarcraft.Buildings.Interfaces;
 
 namespace Uwarcraft.Buildings.BuildingUpgrades
 {
-    class FirstLevelUpgrade : BuildingUpgradeDecorator
-    {
-        public FirstLevelUpgrade(OldAbstractBuilding building) : base(building)
-        {
-            Cost = base.Cost * 2;
-        }
-    }
+    //class FirstLevelUpgrade : BuildingUpgradeDecorator
+    //{
+    //    public FirstLevelUpgrade(OldAbstractBuilding building) : base(building)
+    //    {
+    //        Cost = base.Cost * 2;
+    //    }
+    //}
 }

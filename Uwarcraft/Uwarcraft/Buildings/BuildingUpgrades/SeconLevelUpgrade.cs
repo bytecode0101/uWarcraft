@@ -7,11 +7,11 @@ using Uwarcraft.Buildings.Interfaces;
 
 namespace Uwarcraft.Buildings.BuildingUpgrades
 {
-    class SeconLevelUpgrade : BuildingUpgradeDecorator
-    {
-        public SeconLevelUpgrade(OldAbstractBuilding building) : base(building)
-        {
+    //class SeconLevelUpgrade : BuildingUpgradeDecorator
+    //{
+    //    public SeconLevelUpgrade(OldAbstractBuilding building) : base(building)
+    //    {
             
-        }
-    }
+    //    }
+    //}
 }

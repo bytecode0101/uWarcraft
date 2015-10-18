@@ -24,20 +24,25 @@ namespace TestUwarcraft
         PlayerBase playerBase;
         Uwarcraft.Units.IBuilding farm;
         [Test]
-        
+
         public void TestBuildFarmCapability()
         {
-            playerBase = new PlayerBase();            
-            IUnit p = new Peasant(new Point(14,14));
+            playerBase = new PlayerBase();
+            IUnit p = new Peasant(new Point(14, 14));
             Point xy = new Point(17, 12);
             IUnit a = new Archer(new Point(13, 13));
-            p.Attack(a);
-            Assert.AreEqual(1,a.unitDamageSuffered);
+            for (int i = 0; i < 6; i++)
+            {
+                p.Attack(a);
+                a.Attack(p);
+            }
+
+            Assert.AreEqual(5, a.unitDamageSuffered);
             //farm = new Farm(xy);
             if (playerBase.BuildingsCapabilities[0] is BuildFarmCapability)
             {
                 farm = playerBase.BuildingsCapabilities[0].Build(xy);
-            }            
+            }
             farm.BuildingComplete += Farm_BuildingComplete;
             farm.StartBuilding();
             Assert.IsTrue(playerBase.BuildingsCapabilities[1] is BuildBarrackCapability);

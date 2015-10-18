@@ -16,8 +16,7 @@ namespace Uwarcraft.Units
         {
             BuildBuildingsCapabilities = new List<AbstractBuildBuildingCapability>();
             BuildUnitCapabilities = new List<AbstractBuildUnitCapability>();
-            //BuildBuildingsCapabilities.Add(new BuildBowWorkshopCapability());
-            BuildUnitCapabilities.Add(new BuildPeasantCapability());
+            //BuildBuildingsCapabilities.Add(new BuildTowerCapability());            
             Cost = 100;
             Life = 100;
             Location = location;

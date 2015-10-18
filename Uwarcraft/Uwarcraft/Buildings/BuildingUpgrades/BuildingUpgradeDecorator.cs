@@ -7,18 +7,18 @@ using Uwarcraft.Buildings.Interfaces;
 
 namespace Uwarcraft.Buildings.BuildingUpgrades
 {
-    abstract class BuildingUpgradeDecorator : OldAbstractBuilding
-    {
-        private OldAbstractBuilding baseBuilding;
+    //abstract class BuildingUpgradeDecorator : OldAbstractBuilding
+    //{
+    //    private OldAbstractBuilding baseBuilding;
 
-        public BuildingUpgradeDecorator(OldAbstractBuilding building)
-        {
-            baseBuilding = building;
-        }
+    //    public BuildingUpgradeDecorator(OldAbstractBuilding building)
+    //    {
+    //        baseBuilding = building;
+    //    }
 
-        public override void TakeHit(int hitPower)
-        {
-            baseBuilding.TakeHit(hitPower);
-        }
-    }
+    //    public override void TakeHit(int hitPower)
+    //    {
+    //        baseBuilding.TakeHit(hitPower);
+    //    }
+    //}
 }

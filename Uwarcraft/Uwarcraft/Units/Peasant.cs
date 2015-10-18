@@ -25,11 +25,20 @@ namespace Uwarcraft.Units
         public void Attack(IUnit target)
         {
             target.TakeHit(unitAttackPower);
+            if (target.unitDamageSuffered >= target.unitHealth)
+            {
+                target = null;
+            }
         }
 
         public void Attack(AbstractBuilding target)
         {
             target.TakeHit(unitAttackPower);
+            target.TakeHit(unitAttackPower);
+            if (target.Life <= target.DamageTaken)
+            {
+                target = null;
+            }
         }
 
         public void Move()
