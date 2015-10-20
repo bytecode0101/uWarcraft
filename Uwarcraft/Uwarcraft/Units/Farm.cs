@@ -11,13 +11,14 @@ namespace Uwarcraft.Units
 
         public List<AbstractBuildUnitCapability> BuildUnitCapabilities { get; set; }
         public List<AbstractBuildBuildingCapability> BuildBuildingsCapabilities { get; set; }
+        public bool Complete { get; set; }
 
         public Farm(Game.Point location)
         {
             BuildBuildingsCapabilities = new List<AbstractBuildBuildingCapability>();
             BuildUnitCapabilities = new List<AbstractBuildUnitCapability>();
             BuildBuildingsCapabilities.Add(new BuildBarrackCapability());
-            Cost = 100;
+            Complete = false;
             Life = 100;
             Location = location;
 

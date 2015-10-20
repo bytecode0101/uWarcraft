@@ -5,12 +5,12 @@ using System.Text;
 
 namespace Uwarcraft.Units
 {
-    public class BuildBarrackCapability : AbstractBuildBuildingCapability
+    public class BuildTowerCapability : AbstractBuildBuildingCapability
     {
-        public new int Cost = 200;
+        public new int Cost = 240;
         public override IBuilding Build(Game.Point xy)
-        {            
-            return new Barrack(xy);
+        {
+            return new Tower(xy);
         }
     }
 }

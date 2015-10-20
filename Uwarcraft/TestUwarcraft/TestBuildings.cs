@@ -29,7 +29,7 @@ namespace TestUwarcraft
         {
             playerBase = new PlayerBase();
             IUnit p = new Peasant(new Point(14, 14));
-            Point xy = new Point(17, 12);
+            //Point xy = new Point(17, 12);
             IUnit a = new Archer(new Point(13, 13));
             for (int i = 0; i < 6; i++)
             {
@@ -41,17 +41,18 @@ namespace TestUwarcraft
             //farm = new Farm(xy);
             if (playerBase.BuildingsCapabilities[0] is BuildFarmCapability)
             {
-                farm = playerBase.BuildingsCapabilities[0].Build(xy);
+                farm.BuildingComplete += Farm_BuildingComplete;
+                farm.StartBuilding();
+                
             }
-            farm.BuildingComplete += Farm_BuildingComplete;
-            farm.StartBuilding();
+
             Assert.IsTrue(playerBase.BuildingsCapabilities[1] is BuildBarrackCapability);
         }
 
         private void Farm_BuildingComplete()
         {
             playerBase.BuildingsCapabilities.Add(farm.BuildBuildingsCapabilities[0]);
-
+            farm = playerBase.BuildingsCapabilities[0].Build(new Point(17, 12));
         }
     }
 }

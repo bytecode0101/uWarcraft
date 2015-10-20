@@ -17,7 +17,7 @@ namespace Uwarcraft.Units
         //public List<AbstractBuildBuildingCapability> BuildBuildingsCapabilities { get; set; }
         public int Life { get; set; }
         public int DamageTaken { get; set; }
-        public int Cost { get; set; }
+        
         public Game.Point Location { get; set; }
 
         public virtual void TakeHit(int attackPower)

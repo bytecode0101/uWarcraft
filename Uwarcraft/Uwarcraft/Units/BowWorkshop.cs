@@ -11,13 +11,15 @@ namespace Uwarcraft.Units
 
         public List<AbstractBuildUnitCapability> BuildUnitCapabilities { get; set; }
         public List<AbstractBuildBuildingCapability> BuildBuildingsCapabilities { get; set; }
+        public bool Complete { get; set; }
 
         public BowWorkshop(Game.Point location)
         {
             BuildBuildingsCapabilities = new List<AbstractBuildBuildingCapability>();
             BuildUnitCapabilities = new List<AbstractBuildUnitCapability>();
-            //BuildBuildingsCapabilities.Add(new BuildTowerCapability());            
-            Cost = 100;
+            BuildBuildingsCapabilities.Add(new BuildTowerCapability());
+            BuildUnitCapabilities.Add(new BuildArcherCapability());
+            Complete = false;
             Life = 100;
             Location = location;
 

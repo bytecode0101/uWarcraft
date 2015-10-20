@@ -57,18 +57,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Game\StateMachine\PlayState.cs" />
     <Compile Include="Units\AbstractBuildBuildingCapability.cs" />
     <Compile Include="Units\AbstractBuildUnitCapability.cs" />
     <Compile Include="Units\Archer.cs" />
     <Compile Include="Units\BowWorkshop.cs" />
     <Compile Include="Units\BuildArcherCapability.cs" />
     <Compile Include="Units\BuildBarracksCapability.cs" />
+    <Compile Include="Units\BuildBowWorkshopCapability.cs" />
     <Compile Include="Units\BuildFarmCapability.cs" />
     <Compile Include="Buildings\BuildingUpgrades\BuildingUpgradeDecorator.cs" />
     <Compile Include="Buildings\BuildingUpgrades\FirstLevelUpgrade.cs" />
     <Compile Include="Buildings\BuildingUpgrades\SeconLevelUpgrade.cs" />
     <Compile Include="Buildings\Interfaces\BuildingCost.cs" />
     <Compile Include="Buildings\Interfaces\IBuilding.cs" />
+    <Compile Include="Units\BuildTowerCapability.cs" />
     <Compile Include="Units\Tower.cs" />
     <Compile Include="Units\BuildPeasantCapability.cs" />
     <Compile Include="Units\Farm.cs" />
