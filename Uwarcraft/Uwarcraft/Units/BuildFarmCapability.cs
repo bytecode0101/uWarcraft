@@ -8,7 +8,7 @@ namespace Uwarcraft.Units
     public class BuildFarmCapability : AbstractBuildBuildingCapability
     {
         public new int Cost = 100;
-        public override IBuilding Build(Game.Point xy)
+        public override AbstractBuilding Build(Game.Point xy)
         {            
             return new Farm(xy);
         }

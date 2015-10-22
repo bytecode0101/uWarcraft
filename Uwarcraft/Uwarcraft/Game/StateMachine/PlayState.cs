@@ -13,7 +13,7 @@ namespace Uwarcraft.Game.StateMachine
         private PlayerBase playerBase;
         private int intField;
         private int intField2;
-        private IBuilding[] buildings = new IBuilding[9];
+        private AbstractBuilding[] buildings = new AbstractBuilding[9];
 
         public override void Run()
         {

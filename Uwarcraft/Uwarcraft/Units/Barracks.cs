@@ -6,13 +6,11 @@ using System.Threading.Tasks;
 
 namespace Uwarcraft.Units
 {
-    class Barrack : AbstractBuilding , IBuilding
+    class Barrack : AbstractBuilding 
     {
-        public event BuildingComplete BuildingComplete;
+        public override event BuildingComplete BuildingComplete;
 
-        public List<AbstractBuildUnitCapability> BuildUnitCapabilities { get; set; }
-        public List<AbstractBuildBuildingCapability> BuildBuildingsCapabilities { get; set; }
-        public bool Complete { get; set; }
+        
 
         public Barrack(Game.Point location)
         {
@@ -26,7 +24,7 @@ namespace Uwarcraft.Units
 
         }
 
-        public void StartBuilding()
+        public override void StartBuilding()
         {
             if (BuildingComplete != null)
             {

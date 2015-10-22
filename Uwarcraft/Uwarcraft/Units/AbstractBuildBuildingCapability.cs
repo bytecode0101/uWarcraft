@@ -10,7 +10,7 @@ namespace Uwarcraft.Units
     {
         public string Description { get; set; }
         public int Cost { get; set; }
-        public abstract IBuilding Build(Game.Point xy);
+        public abstract AbstractBuilding Build(Game.Point xy);
         
         
     }

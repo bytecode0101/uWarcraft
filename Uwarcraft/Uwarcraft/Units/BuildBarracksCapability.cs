@@ -8,7 +8,7 @@ namespace Uwarcraft.Units
     public class BuildBarrackCapability : AbstractBuildBuildingCapability
     {
         public new int Cost = 200;
-        public override IBuilding Build(Game.Point xy)
+        public override AbstractBuilding Build(Game.Point xy)
         {            
             return new Barrack(xy);
         }

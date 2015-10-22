@@ -22,7 +22,7 @@ namespace TestUwarcraft
         //}
 
         PlayerBase playerBase;
-        Uwarcraft.Units.IBuilding farm;
+        Uwarcraft.Units.AbstractBuilding farm;
         [Test]
 
         public void TestBuildFarmCapability()

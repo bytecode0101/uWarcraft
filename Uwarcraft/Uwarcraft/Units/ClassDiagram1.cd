@@ -38,12 +38,9 @@
   <Class Name="Uwarcraft.Units.PlayerBase">
     <Position X="16.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <HashCode>AAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
       <FileName>Units\PlayerBase.cs</FileName>
     </TypeIdentifier>
-    <ShowAsCollectionAssociation>
-      <Property Name="BuildingsCapabilities" />
-    </ShowAsCollectionAssociation>
   </Class>
   <Class Name="Uwarcraft.Units.Peasant">
     <Position X="17" Y="4.5" Width="1.5" />
@@ -63,42 +60,34 @@
   <Class Name="Uwarcraft.Units.AbstractBuilding">
     <Position X="8" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAACAAAAAAAAAIAAAAAAAAAAAAAEAAAAAABAAA=</HashCode>
+      <HashCode>AABAAAAACAAAAAIAAAIAAAAAAAAAAAAAEAgCAAABAAA=</HashCode>
       <FileName>Units\AbstractBuilding.cs</FileName>
     </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="BuildBuildingsCapabilities" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="Uwarcraft.Units.Farm">
     <Position X="7.75" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AABAAAAAAAAAAAIAAAAAAAAAAAAAAAAAEAgCAAAAAAA=</HashCode>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
       <FileName>Units\Farm.cs</FileName>
     </TypeIdentifier>
-    <ShowAsCollectionAssociation>
-      <Property Name="BuildBuildingsCapabilities" />
-    </ShowAsCollectionAssociation>
-    <Lollipop Position="0.2" />
   </Class>
   <Class Name="Uwarcraft.Units.Barrack">
     <Position X="9.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AABAAAAAAAAAAAIAAAAAAAAAAAAAAAAAEAgCAAAAAAA=</HashCode>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
       <FileName>Units\Barracks.cs</FileName>
     </TypeIdentifier>
-    <ShowAsCollectionAssociation>
-      <Property Name="BuildBuildingsCapabilities" />
-    </ShowAsCollectionAssociation>
-    <Lollipop Position="0.2" />
   </Class>
   <Class Name="Uwarcraft.Units.BowWorkshop">
     <Position X="11.25" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AABAAAAAAAAAAAIAAAAAAAAAAAAAAAAAEAgCAAAAAAA=</HashCode>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
       <FileName>Units\BowWorkshop.cs</FileName>
     </TypeIdentifier>
-    <ShowAsCollectionAssociation>
-      <Property Name="BuildBuildingsCapabilities" />
-    </ShowAsCollectionAssociation>
-    <Lollipop Position="0.2" />
   </Class>
   <Class Name="Uwarcraft.Units.Archer">
     <Position X="15.25" Y="4.5" Width="1.5" />
@@ -111,13 +100,9 @@
   <Class Name="Uwarcraft.Units.Tower">
     <Position X="13" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AABAAAAAAAAAAAIAAAAAAAAAAAAAAAAAEAgCAAAAAAA=</HashCode>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
       <FileName>Units\Tower.cs</FileName>
     </TypeIdentifier>
-    <ShowAsCollectionAssociation>
-      <Property Name="BuildBuildingsCapabilities" />
-    </ShowAsCollectionAssociation>
-    <Lollipop Position="0.2" />
   </Class>
   <Class Name="Uwarcraft.Units.BuildBowWorkshopCapability">
     <Position X="4" Y="3" Width="1.5" />
@@ -141,7 +126,6 @@
     </TypeIdentifier>
     <ShowAsAssociation>
       <Field Name="playerBase" />
-      <Field Name="buildings" />
     </ShowAsAssociation>
   </Class>
   <Interface Name="Uwarcraft.Units.IUnit">
@@ -152,17 +136,17 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="Uwarcraft.Units.IBuilding">
-    <Position X="12.75" Y="1.5" Width="1.5" />
+    <Position X="9.75" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AABAAAAAAAAAAAIAAAAAAAAAAAAAAAAAEAgCAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAEAgCAAAAAAA=</HashCode>
       <FileName>Units\IBuilding.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Delegate Name="Uwarcraft.Units.BuildingComplete" Collapsed="true">
-    <Position X="11.5" Y="0.5" Width="1.5" />
+  <Delegate Name="Uwarcraft.Units.BuildingComplete">
+    <Position X="9.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Units\IBuilding.cs</FileName>
+      <FileName>Units\AbstractBuilding.cs</FileName>
     </TypeIdentifier>
   </Delegate>
   <Font Name="Segoe UI" Size="9" />

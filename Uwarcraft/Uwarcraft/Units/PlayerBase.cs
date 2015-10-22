@@ -7,10 +7,8 @@ namespace Uwarcraft.Units
 {
     public class PlayerBase
     {
-        public List<AbstractBuildBuildingCapability> BuildingsCapabilities
-        {
-            get; set;
-        }
+        public List<AbstractBuilding> Buildings { get; set; }
+        public List<AbstractBuildBuildingCapability> BuildingsCapabilities { get; set; }
 
         public PlayerBase()
         {
