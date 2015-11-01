@@ -71,6 +71,7 @@
     <Compile Include="Buildings\BuildingUpgrades\SeconLevelUpgrade.cs" />
     <Compile Include="Buildings\Interfaces\BuildingCost.cs" />
     <Compile Include="Buildings\Interfaces\IBuilding.cs" />
+    <Compile Include="Units\BuildingFactory.cs" />
     <Compile Include="Units\BuildTowerCapability.cs" />
     <Compile Include="Units\Tower.cs" />
     <Compile Include="Units\BuildPeasantCapability.cs" />

@@ -14,12 +14,22 @@ namespace Uwarcraft.Units
         {
             XmlSerializer deserializer = new XmlSerializer(typeof(UIBLC));
             // WARNING !!! You might need to change this link in order to make this project work
-            TextReader reader = new StreamReader(@"C:\Users\roby\Source\Repos\uWarcraft5\Uwarcraft\Game\F.xml");
+            TextReader reader = new StreamReader(@"C:/Users/Andrei/Source/Repos/uWarcraft/Uwarcraft/Serialization/UIBLC.xml");
             object obj = deserializer.Deserialize(reader);
             UIBLC uW = (UIBLC)obj;
             reader.Close();
-            return uW;
-            
+            return uW;            
+        }
+
+        public static starting XMLStarting()
+        {
+            XmlSerializer deserializer = new XmlSerializer(typeof(starting));
+            // WARNING !!! You might need to change this link in order to make this project work
+            TextReader reader = new StreamReader(@"C:/Users/Andrei/Source/Repos/uWarcraft/Uwarcraft/Serialization/starting.xml");
+            object obj = deserializer.Deserialize(reader);
+            starting s = (starting)obj;
+            reader.Close();
+            return s;
         }
     }
 
@@ -27,5 +37,10 @@ namespace Uwarcraft.Units
     {
         public string[] buildingTypes { get; set; }
         public string[] unitTypes { get; set; }
+    }
+
+    public class starting
+    {
+        public int resources { get; set; }
     }
 }

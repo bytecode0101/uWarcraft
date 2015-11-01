@@ -30,17 +30,30 @@ namespace Serialization
             uW.buildingTypes = buildingTypes;
             uW.unitTypes = unitTypes;
             Serialize(uW);
+            starting s = new starting();
+            s.resources = 200;
+            Serialize(s);
         }
         //[XmlInclude(typeof(BuildFarmCapability)), XmlInclude(typeof(BuildBarrackCapability)), XmlInclude(typeof(BuildBowWorkshopCapability)), XmlInclude(typeof(BuildTowerCapability)), XmlInclude(typeof(BuildPeasantCapability)), XmlInclude(typeof(BuildArcherCapability))]
         static public void Serialize(UIBLC uW)
         {
             XmlSerializer serializer = new XmlSerializer(typeof(UIBLC));
             // WARNING !!! You might need to change this link in order to make this project work
-            using (TextWriter writer = new StreamWriter(@"C:\Users\Andrei\Source\Repos\uWarcraft\Uwarcraft\Uwarcraft\bin\Debug\F.xml")) 
+            using (TextWriter writer = new StreamWriter(@"C:/Users/Andrei/Source/Repos/uWarcraft/Uwarcraft/Serialization/UIBLC.xml")) 
             {
                 serializer.Serialize(writer, uW);
             }
-        }        
+        }
+
+        static public void Serialize(starting s)
+        {
+            XmlSerializer serializer = new XmlSerializer(typeof(starting));
+            // WARNING !!! You might need to change this link in order to make this project work
+            using (TextWriter writer = new StreamWriter(@"C:/Users/Andrei/Source/Repos/uWarcraft/Uwarcraft/Serialization/starting.xml"))
+            {
+                serializer.Serialize(writer, s);
+            }
+        }
     }
 
     public class UIBLC
@@ -49,5 +62,10 @@ namespace Serialization
         public string[] unitTypes { get; set; }
         //public AbstractBuildBuildingCapability[] buildingTypes { get; set; }
         //public AbstractBuildUnitCapability[] unitTypes { get; set; }
+    }
+
+    public class starting
+    {
+        public int resources { get; set; }
     }
 }
