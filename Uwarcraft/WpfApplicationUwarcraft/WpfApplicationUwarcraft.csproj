@@ -96,10 +96,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Game\Game.csproj">
-      <Project>{33bd87ab-6b6d-4c09-a6d1-365b2daa8896}</Project>
-      <Name>Game</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Serialization\Serialization.csproj">
       <Project>{b1e5a61f-b176-48d6-8a60-56e0b1cd29ca}</Project>
       <Name>Serialization</Name>

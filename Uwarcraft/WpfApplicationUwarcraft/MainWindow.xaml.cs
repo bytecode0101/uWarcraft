@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -14,17 +15,23 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Uwarcraft.Units;
+using Uwarcraft.Game.StateMachine;
 
 namespace WpfApplicationUwarcraft
 {
+    public delegate void BuildCommandEventHandler(object button, BuildCommandEventArgs type);
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
+        public event BuildCommandEventHandler BuildCommand;
+
         public MainWindow()
         {
             InitializeComponent();
+            Console.WriteLine("starting thread");
+            Thread states = new Thread(new ThreadStart(runGame));
             Uwarcraft.Units.UIBLC denumiri = new Uwarcraft.Units.UIBLC();
           denumiri= XMLWork.XMLDeserialization();
             int xx = denumiri.buildingTypes.Length;
@@ -45,5 +52,16 @@ namespace WpfApplicationUwarcraft
                 stack2.Children.Add(button1);
             }
         }
+
+        private void runGame()
+        {
+            Game g = new Game(new PlayState());
+            Console.ReadLine();
+        }    
+    }
+
+    public class BuildCommandEventArgs
+    {
+        public string type { get; set; }
     }
 }

@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 using Uwarcraft;
+using Uwarcraft.Game.StateMachine;
 using Uwarcraft.Units;
 
 namespace Serialization
@@ -13,10 +14,11 @@ namespace Serialization
     public class Program
     {
         //[XmlInclude(typeof(BuildFarmCapability)), XmlInclude(typeof(BuildBarrackCapability)), XmlInclude(typeof(BuildBowWorkshopCapability)), XmlInclude(typeof(BuildTowerCapability)), XmlInclude(typeof(BuildPeasantCapability)), XmlInclude(typeof(BuildArcherCapability))]
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            var buildingTypes = new string[4] {"Farm", "Barack","BowWorkshop","Tower" };
-            var unitTypes = new string[2] { "Peasant", "Archer" };
+            
+            var buildingTypes = new string[5] {"Farm", "Barack","BowWorkshop","Tower","Blacksmith" };
+            var unitTypes = new string[4] { "Peasant", "Archer", "Clubman", "SwordFighter" };
             UIBLC uW = new UIBLC();
             //var buildingTypes = new AbstractBuildBuildingCapability[4];
             //buildingTypes[0] = new BuildFarmCapability();

@@ -10,17 +10,17 @@ using Uwarcraft.Game.StateMachine;
 
 namespace DemoGame
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            UIBLC robert = new UIBLC();
-            robert = XMLWork.XMLDeserialization();
-            Console.WriteLine(robert.buildingTypes[2] + " " + robert.buildingTypes[3] + " " + robert.unitTypes[1] + robert.buildingTypes.Length + " " + robert.unitTypes.Length);
-            Console.ReadLine();
-            Game g = new Game(new MainMenuState());
-            Console.ReadLine();
-        }
-    }
+    //public class Program
+    //{
+    //    public static void FakeMain()
+    //    {
+    //        //UIBLC robert = new UIBLC();
+    //        //robert = XMLWork.XMLDeserialization();
+    //        //Console.WriteLine(robert.buildingTypes[2] + " " + robert.buildingTypes[3] + " " + robert.unitTypes[1] + robert.buildingTypes.Length + " " + robert.unitTypes.Length);
+    //        //Console.ReadLine();
+    //        Game g = new Game(new MainMenuState());
+    //        Console.ReadLine();
+    //    }
+    //}
     
 }

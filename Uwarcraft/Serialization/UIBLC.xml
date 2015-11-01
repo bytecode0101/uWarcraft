@@ -5,9 +5,12 @@
     <string>Barack</string>
     <string>BowWorkshop</string>
     <string>Tower</string>
+    <string>Blacksmith</string>
   </buildingTypes>
   <unitTypes>
     <string>Peasant</string>
     <string>Archer</string>
+    <string>Clubman</string>
+    <string>SwordFighter</string>
   </unitTypes>
 </UIBLC>

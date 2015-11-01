@@ -3,6 +3,7 @@ using Uwarcraft.Units;
 
 namespace Uwarcraft.Game.StateMachine
 {
+    //public 
     /// <summary>
     /// temporary code checks if BuildingsCapabilities are working
     /// </summary>
