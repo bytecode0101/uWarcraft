@@ -19,8 +19,7 @@ namespace Uwarcraft.Units
             UIBLC uW = (UIBLC)obj;
             reader.Close();
             return uW;
-            //Console.WriteLine(uW.buildingTypes[2] + " " + uW.buildingTypes[3] + " " + uW.unitTypes[1] + uW.buildingTypes.Length + " " + uW.unitTypes.Length);
-            //Console.ReadLine();
+            
         }
     }
 
