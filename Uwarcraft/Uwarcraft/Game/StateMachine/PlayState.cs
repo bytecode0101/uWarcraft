@@ -13,52 +13,52 @@ namespace Uwarcraft.Game.StateMachine
         private PlayerBase playerBase;
         private int intField;
         private int intField2;
-        private AbstractBuilding[] buildings = new AbstractBuilding[9];
+        //private AbstractBuilding[] buildings = new AbstractBuilding[9];
 
         public override void Run()
         {
             playerBase = new PlayerBase();
-            int nrOfBuildings = 0;
-            IUnit p = new Peasant(new Point(14, 14));
+            //int nrOfBuildings = 0;
+            //IUnit p = new Peasant(new Point(14, 14));
 
-            while (true)
-            {
+            //while (true)
+            //{
 
-                int nrOfOptions = ListBuildOptions();
-                int option = Select();
-                if (option <= nrOfOptions)
-                {
-                    intField = option;
-                    intField2 = nrOfBuildings;
-                    buildings[nrOfBuildings] = playerBase.BuildingsCapabilities[option].Build(new Point(17- nrOfBuildings, 12+ nrOfBuildings));
-                    buildings[nrOfBuildings].BuildingComplete += Building_BuildingComplete;
-                    buildings[nrOfBuildings].StartBuilding();
-                    nrOfBuildings++;
-                    Console.WriteLine("total buildings ={0}", nrOfBuildings);
-                }
-                else
-                {
-                    Console.WriteLine("that option # does not exist");
-                }
-            }
-
-        }
-
-        private void Building_BuildingComplete()
-        {
-            try
-            {
-                playerBase.BuildingsCapabilities.Add(buildings[intField2].BuildBuildingsCapabilities[0]);
-            }
-            catch (ArgumentOutOfRangeException)
-            {
-            }
-            playerBase = EraseDuplicates(playerBase);
-            buildings[intField2].Complete = true;
-
-            Console.WriteLine("built " + buildings[intField2].GetType().ToString());
+            //    int nrOfOptions = ListBuildOptions();
+            //    int option = Select();
+            //    if (option <= nrOfOptions)
+            //    {
+            //        intField = option;
+            //        intField2 = nrOfBuildings;
+            //        buildings[nrOfBuildings] = playerBase.BuildingsCapabilities[option].Build(new Point(17- nrOfBuildings, 12+ nrOfBuildings));
+            //        buildings[nrOfBuildings].BuildingComplete += Building_BuildingComplete;
+            //        buildings[nrOfBuildings].StartBuilding();
+            //        nrOfBuildings++;
+            //        Console.WriteLine("total buildings ={0}", nrOfBuildings);
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("that option # does not exist");
+            //    }
+            //}
 
         }
+
+        //private void Building_BuildingComplete()
+        //{
+        //    try
+        //    {
+        //        playerBase.BuildingsCapabilities.Add(buildings[intField2].BuildBuildingsCapabilities[0]);
+        //    }
+        //    catch (ArgumentOutOfRangeException)
+        //    {
+        //    }
+        //    playerBase = EraseDuplicates(playerBase);
+        //    buildings[intField2].Complete = true;
+
+        //    Console.WriteLine("built " + buildings[intField2].GetType().ToString());
+
+        //}
 
         private int ListBuildOptions()
         {
