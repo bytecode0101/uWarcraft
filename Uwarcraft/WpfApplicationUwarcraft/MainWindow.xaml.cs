@@ -29,6 +29,21 @@ namespace WpfApplicationUwarcraft
           denumiri= XMLWork.XMLDeserialization();
             int xx = denumiri.buildingTypes.Length;
             int yy = denumiri.unitTypes.Length;
+            for (int i = 0; i < xx; i++)
+            {
+                Button button1 = new Button();
+                button1.Content = denumiri.buildingTypes[i];
+                button1.Name = denumiri.buildingTypes[i].ToUpper();
+                stack1.Children.Add(button1);
+            }
+
+            for (int i = 0; i < yy; i++)
+            {
+                Button button1 = new Button();
+                button1.Content = denumiri.unitTypes[i];
+                button1.Name = denumiri.unitTypes[i].ToUpper();
+                stack2.Children.Add(button1);
+            }
         }
     }
 }
