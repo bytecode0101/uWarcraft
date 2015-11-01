@@ -10,7 +10,7 @@ namespace Uwarcraft.Units
 {
     public  class XMLWork
     {
-        public static void XMLDeserialization()
+        public static UIBLC XMLDeserialization()
         {
             XmlSerializer deserializer = new XmlSerializer(typeof(UIBLC));
             // WARNING !!! You might need to change this link in order to make this project work
@@ -18,8 +18,9 @@ namespace Uwarcraft.Units
             object obj = deserializer.Deserialize(reader);
             UIBLC uW = (UIBLC)obj;
             reader.Close();
-            Console.WriteLine(uW.buildingTypes[2] + " " + uW.buildingTypes[3] + " " + uW.unitTypes[1] + uW.buildingTypes.Length + " " + uW.unitTypes.Length);
-            Console.ReadLine();
+            return uW;
+            //Console.WriteLine(uW.buildingTypes[2] + " " + uW.buildingTypes[3] + " " + uW.unitTypes[1] + uW.buildingTypes.Length + " " + uW.unitTypes.Length);
+            //Console.ReadLine();
         }
     }
 
