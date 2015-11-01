@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestUwarcraft", "TestUwarcr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game", "Game\Game.csproj", "{33BD87AB-6B6D-4C09-A6D1-365B2DAA8896}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serialization", "Serialization\Serialization.csproj", "{B1E5A61F-B176-48D6-8A60-56E0B1CD29CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{33BD87AB-6B6D-4C09-A6D1-365B2DAA8896}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33BD87AB-6B6D-4C09-A6D1-365B2DAA8896}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33BD87AB-6B6D-4C09-A6D1-365B2DAA8896}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1E5A61F-B176-48D6-8A60-56E0B1CD29CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1E5A61F-B176-48D6-8A60-56E0B1CD29CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1E5A61F-B176-48D6-8A60-56E0B1CD29CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1E5A61F-B176-48D6-8A60-56E0B1CD29CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
