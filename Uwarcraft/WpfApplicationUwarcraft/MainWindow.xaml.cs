@@ -51,11 +51,16 @@ namespace WpfApplicationUwarcraft
                 button1.Name = denumiri.unitTypes[i].ToUpper();
                 stack2.Children.Add(button1);
             }
+
+            
         }
 
         private void runGame()
         {
             Game g = new Game(new PlayState());
+            var st = (PlayState)g.CurrentState;
+            var buildings = st.PlayerBase.Buildings;
+            var units = st.PlayerBase.Units;
             Console.ReadLine();
         }    
     }

@@ -11,14 +11,14 @@ namespace Uwarcraft.Game.StateMachine
     {
         public override event StateFinished StateFinishedEventHandler;
         //AbstractState nextState;
-        private PlayerBase playerBase;
+        public PlayerBase PlayerBase;
         private int intField;
         private int intField2;
         //private AbstractBuilding[] buildings = new AbstractBuilding[9];
 
         public override void Run()
         {
-            playerBase = new PlayerBase();
+            PlayerBase = new PlayerBase();
             //int nrOfBuildings = 0;
             //IUnit p = new Peasant(new Point(14, 14));
 
@@ -65,7 +65,7 @@ namespace Uwarcraft.Game.StateMachine
         {
             string[] msg = new string[5];
             int i = 0;
-            foreach (AbstractBuildBuildingCapability cap in playerBase.BuildingsCapabilities)
+            foreach (AbstractBuildBuildingCapability cap in PlayerBase.BuildingsCapabilities)
             {
                 msg[i] = cap.GetType().ToString();
                 msg[i] = msg[i].Substring(16, msg[i].Length - 26);
