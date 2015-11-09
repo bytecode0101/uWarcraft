@@ -57,6 +57,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Game\StateMachine\Build.cs" />
+    <Compile Include="Game\StateMachine\BuildCommandEventArgs.cs" />
+    <Compile Include="Game\StateMachine\ICommand.cs" />
     <Compile Include="Game\StateMachine\PlayState.cs" />
     <Compile Include="Units\AbstractBuildBuildingCapability.cs" />
     <Compile Include="Units\AbstractBuildUnitCapability.cs" />
@@ -73,6 +76,7 @@
     <Compile Include="Buildings\Interfaces\IBuilding.cs" />
     <Compile Include="Units\BuildingFactory.cs" />
     <Compile Include="Units\BuildTowerCapability.cs" />
+    <Compile Include="Units\events.cs" />
     <Compile Include="Units\Tower.cs" />
     <Compile Include="Units\BuildPeasantCapability.cs" />
     <Compile Include="Units\Farm.cs" />

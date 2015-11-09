@@ -19,19 +19,20 @@ using Uwarcraft.Game.StateMachine;
 
 namespace WpfApplicationUwarcraft
 {
-    public delegate void BuildCommandEventHandler(object button, BuildCommandEventArgs type);
+    //public delegate void BuildCommandEventHandler(Button button, BuildCommandEventArgs type);
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-        public event BuildCommandEventHandler BuildCommand;
+        //public event BuildCommandEventHandler BuildCommand;
 
         public MainWindow()
         {
             InitializeComponent();
             Console.WriteLine("starting thread");
             Thread states = new Thread(new ThreadStart(runGame));
+            states.Start();
             Uwarcraft.Units.UIBLC denumiri = new Uwarcraft.Units.UIBLC();
           denumiri= XMLWork.XMLDeserialization();
             int xx = denumiri.buildingTypes.Length;
@@ -65,8 +66,8 @@ namespace WpfApplicationUwarcraft
         }    
     }
 
-    public class BuildCommandEventArgs
-    {
-        public string type { get; set; }
-    }
+    //public class BuildCommandEventArgs
+    //{
+    //    public string type { get; set; }
+    //}
 }

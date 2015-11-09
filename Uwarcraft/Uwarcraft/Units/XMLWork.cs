@@ -14,7 +14,7 @@ namespace Uwarcraft.Units
         {
             XmlSerializer deserializer = new XmlSerializer(typeof(UIBLC));
             // WARNING !!! You might need to change this link in order to make this project work
-            TextReader reader = new StreamReader(@"C:/Users/Andrei/Source/Repos/uWarcraft/Uwarcraft/Serialization/UIBLC.xml");
+            TextReader reader = new StreamReader(@"UIBLC.xml");
             object obj = deserializer.Deserialize(reader);
             UIBLC uW = (UIBLC)obj;
             reader.Close();
@@ -25,7 +25,7 @@ namespace Uwarcraft.Units
         {
             XmlSerializer deserializer = new XmlSerializer(typeof(starting));
             // WARNING !!! You might need to change this link in order to make this project work
-            TextReader reader = new StreamReader(@"C:/Users/Andrei/Source/Repos/uWarcraft/Uwarcraft/Serialization/starting.xml");
+            TextReader reader = new StreamReader(@"starting.xml");
             object obj = deserializer.Deserialize(reader);
             starting s = (starting)obj;
             reader.Close();

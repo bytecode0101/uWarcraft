@@ -112,16 +112,16 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Uwarcraft.Game.StateMachine.PlayState">
-    <Position X="19.5" Y="0.5" Width="1.5" />
+    <Position X="21.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>EAAAEAAAAAAAAAQAAAAAAACAAAAAACAAAAAAQAAQAAI=</HashCode>
+      <HashCode>AAAAEAAAAAAAAAQAAAAAAACQAAAAACAAAAAAQAAAAAI=</HashCode>
       <FileName>Game\StateMachine\PlayState.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Uwarcraft.Units.PlayerBase">
     <Position X="16.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAABABAAAAAAAAAAAAAAAAAAAAAAIAEAAEAAAAAAA=</HashCode>
+      <HashCode>AAAAABABIIAgAAAAAAAAAAAAAAEAgAIAEAAEAAAAAAA=</HashCode>
       <FileName>Units\PlayerBase.cs</FileName>
     </TypeIdentifier>
   </Class>

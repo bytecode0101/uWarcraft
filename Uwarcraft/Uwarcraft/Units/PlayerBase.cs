@@ -23,6 +23,10 @@ namespace Uwarcraft.Units
         {
             //BuildingsCapabilities = new List<AbstractBuildBuildingCapability>();
             //BuildingsCapabilities.Add(new BuildFarmCapability());
+            BuildCapabilitiesBuildings = new Dictionary<string, bool>();
+            BuildCapabilitiesUnits = new Dictionary<string, bool>();
+            CountBuildings = new Dictionary<string, int>();
+            CountUnits = new Dictionary<string, int>();
             UIBLC xml = new UIBLC();
             xml = XMLWork.XMLDeserialization();
             Buildings = new List<AbstractBuilding>();
@@ -31,10 +35,12 @@ namespace Uwarcraft.Units
             foreach (string item in xml.buildingTypes)
             {
                 BuildCapabilitiesBuildings.Add(item, false);
+                CountBuildings.Add(item, 0);
             }
             foreach (string item in xml.unitTypes)
             {
                 BuildCapabilitiesUnits.Add(item, false);
+                CountUnits.Add(item, 0);
             }
             BuildCapabilitiesBuildings["Farm"] = true;
             factory = new BuildingFactory();
@@ -45,6 +51,8 @@ namespace Uwarcraft.Units
             if (BuildCapabilitiesBuildings[buildingType])
             {
                 AbstractBuilding newbuilding = factory.Build(buildingType, coords);
+                Buildings.Add(newbuilding);
+                CountBuildings[buildingType]++;
             }
         }
     }

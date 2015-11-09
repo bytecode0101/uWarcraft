@@ -1,8 +1,10 @@
 ﻿using NUnit.Framework;
+using System;
 using Uwarcraft;
 using Uwarcraft.Buildings;
 
 using Uwarcraft.Game;
+using Uwarcraft.Game.StateMachine;
 using Uwarcraft.Units;
 
 namespace TestUwarcraft
@@ -22,32 +24,51 @@ namespace TestUwarcraft
         //}
 
         PlayerBase playerBase;
-        Uwarcraft.Units.AbstractBuilding farm;
+        AbstractBuilding farm;
+        public event EventHandler<BuildCommandEventArgs> BuildCommand;
         [Test]
-
-        public void TestBuildFarmCapability()
+        public void TestBuildings1()
         {
-            playerBase = new PlayerBase();
-            IUnit p = new Peasant(new Point(14, 14));
-            //Point xy = new Point(17, 12);
-            IUnit a = new Archer(new Point(13, 13));
-            for (int i = 0; i < 6; i++)
-            {
-                p.Attack(a);
-                a.Attack(p);
-            }
-
-            Assert.AreEqual(5, a.unitDamageSuffered);
-            //farm = new Farm(xy);
-            if (playerBase.BuildingsCapabilities[0] is BuildFarmCapability)
-            {
-                farm.BuildingComplete += Farm_BuildingComplete;
-                farm.StartBuilding();
-                
-            }
-
-            Assert.IsTrue(playerBase.BuildingsCapabilities[1] is BuildBarrackCapability);
+            Game g = new Game(new PlayState());
+            var st = (PlayState)g.CurrentState;
+            var buildings = st.PlayerBase.Buildings;
+            var units = st.PlayerBase.Units;
+            BuildCommand += st.OnBuildCommand;
+            OnBuildCommand("Farm", new Point(11, 16));
+            Assert.AreEqual(st.PlayerBase.Buildings.Count, 1);
         }
+
+        public void OnBuildCommand(string type, Point coords)
+        {
+            if (BuildCommand!=null)
+            {
+                BuildCommandEventArgs e = new BuildCommandEventArgs() { Coords = coords, Type = type };
+                BuildCommand(this, e);
+            }
+        }
+        //public void TestBuildFarmCapability()
+        //{
+        //    playerBase = new PlayerBase();
+        //    IUnit p = new Peasant(new Point(14, 14));
+        //    //Point xy = new Point(17, 12);
+        //    IUnit a = new Archer(new Point(13, 13));
+        //    for (int i = 0; i < 6; i++)
+        //    {
+        //        p.Attack(a);
+        //        a.Attack(p);
+        //    }
+
+        //    Assert.AreEqual(5, a.unitDamageSuffered);
+        //    //farm = new Farm(xy);
+        //    if (playerBase.BuildingsCapabilities[0] is BuildFarmCapability)
+        //    {
+        //        farm.BuildingComplete += Farm_BuildingComplete;
+        //        farm.StartBuilding();
+
+        //    }
+
+        //    Assert.IsTrue(playerBase.BuildingsCapabilities[1] is BuildBarrackCapability);
+        //}
 
         private void Farm_BuildingComplete()
         {
