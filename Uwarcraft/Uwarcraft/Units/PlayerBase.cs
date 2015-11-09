@@ -21,8 +21,6 @@ namespace Uwarcraft.Units
 
         public PlayerBase()
         {
-            //BuildingsCapabilities = new List<AbstractBuildBuildingCapability>();
-            //BuildingsCapabilities.Add(new BuildFarmCapability());
             BuildCapabilitiesBuildings = new Dictionary<string, bool>();
             BuildCapabilitiesUnits = new Dictionary<string, bool>();
             CountBuildings = new Dictionary<string, int>();

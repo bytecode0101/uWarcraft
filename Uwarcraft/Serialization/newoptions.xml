@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<NewOptions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <FarmBuildings>
+    <string>Barrack</string>
+  </FarmBuildings>
+  <FarmUnits>
+    <string>Peasant</string>
+  </FarmUnits>
+  <BarrackBuildings>
+    <string>BowWorkshop</string>
+  </BarrackBuildings>
+  <BarrackUnits>
+    <string>Clubman</string>
+  </BarrackUnits>
+  <BowWorkshopBuildings>
+    <string>Tower</string>
+  </BowWorkshopBuildings>
+  <BowWorkshopUnits>
+    <string>Archer</string>
+  </BowWorkshopUnits>
+  <TowerBuildings>
+    <string>Blacksmith</string>
+  </TowerBuildings>
+  <BlacksmithUnits>
+    <string>SwordFighter</string>
+  </BlacksmithUnits>
+</NewOptions>
