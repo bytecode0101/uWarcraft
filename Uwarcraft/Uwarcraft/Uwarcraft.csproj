@@ -63,6 +63,7 @@
     <Compile Include="Game\StateMachine\PlayState.cs" />
     <Compile Include="Units\AbstractBuildBuildingCapability.cs" />
     <Compile Include="Units\AbstractBuildUnitCapability.cs" />
+    <Compile Include="Units\AddNewOptions.cs" />
     <Compile Include="Units\Archer.cs" />
     <Compile Include="Units\BowWorkshop.cs" />
     <Compile Include="Units\BuildArcherCapability.cs" />

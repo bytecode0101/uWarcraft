@@ -23,8 +23,8 @@ namespace TestUwarcraft
         //    Assert.AreEqual(86, farm.Life);
         //}
 
-        PlayerBase playerBase;
-        AbstractBuilding farm;
+        //PlayerBase playerBase;
+        //AbstractBuilding farm;
         public event EventHandler<BuildCommandEventArgs> BuildCommand;
         [Test]
         public void TestBuildings1()
@@ -36,6 +36,15 @@ namespace TestUwarcraft
             BuildCommand += st.OnBuildCommand;
             OnBuildCommand("Farm", new Point(11, 16));
             Assert.AreEqual(st.PlayerBase.Buildings.Count, 1);
+            OnBuildCommand("Tower", new Point(18, 9));
+            Assert.AreEqual(st.PlayerBase.Buildings.Count, 1);
+            OnBuildCommand("BowWorkshop", new Point(14, 13));
+            Assert.AreEqual(st.PlayerBase.CountBuildings["Farm"], 1);
+            Assert.AreEqual(st.PlayerBase.CountBuildings["BowWorkshop"], 0);
+            OnBuildCommand("Barrack", new Point(10, 17));
+            Assert.AreEqual(st.PlayerBase.CountBuildings["Barrack"], 1);
+            Assert.AreEqual(st.PlayerBase.Buildings.Count, 2);
+            Assert.AreEqual(st.PlayerBase.Buildings[1].Location.y,17);
         }
 
         public void OnBuildCommand(string type, Point coords)
@@ -70,10 +79,10 @@ namespace TestUwarcraft
         //    Assert.IsTrue(playerBase.BuildingsCapabilities[1] is BuildBarrackCapability);
         //}
 
-        private void Farm_BuildingComplete()
-        {
-            playerBase.BuildingsCapabilities.Add(farm.BuildBuildingsCapabilities[0]);
-            farm = playerBase.BuildingsCapabilities[0].Build(new Point(17, 12));
-        }
+        //private void Farm_BuildingComplete()
+        //{
+        //    playerBase.BuildingsCapabilities.Add(farm.BuildBuildingsCapabilities[0]);
+        //    farm = playerBase.BuildingsCapabilities[0].Build(new Point(17, 12));
+        //}
     }
 }

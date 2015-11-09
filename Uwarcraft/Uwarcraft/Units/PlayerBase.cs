@@ -18,6 +18,7 @@ namespace Uwarcraft.Units
         public Dictionary<string, int> CountUnits;
 
         private BuildingFactory factory;
+        private AddNewOptions newOptions;
 
         public PlayerBase()
         {
@@ -42,6 +43,7 @@ namespace Uwarcraft.Units
             }
             BuildCapabilitiesBuildings["Farm"] = true;
             factory = new BuildingFactory();
+            newOptions = new AddNewOptions();
         }
 
         public void Build(string buildingType, Game.Point coords)
@@ -50,6 +52,25 @@ namespace Uwarcraft.Units
             {
                 AbstractBuilding newbuilding = factory.Build(buildingType, coords);
                 Buildings.Add(newbuilding);
+                if (CountBuildings[buildingType]==0)
+                {
+                    string[] b = newOptions.Buildings(buildingType);
+                    if (b!=null)
+                    {
+                        foreach (string item in b)
+                        {
+                            BuildCapabilitiesBuildings[item] = true;
+                        }
+                    }                    
+                    string[] u = newOptions.Units(buildingType);
+                    if (u != null)
+                    {
+                        foreach (string item in u)
+                        {
+                            BuildCapabilitiesUnits[item] = true;
+                        }
+                    }
+                }
                 CountBuildings[buildingType]++;
             }
         }

@@ -10,10 +10,20 @@ namespace Uwarcraft.Units
 {
     public  class XMLWork
     {
+        public NewOptions NewOptions { get; set; }
+
+        public XMLWork()
+        {
+            XmlSerializer deserializer = new XmlSerializer(typeof(NewOptions));
+            TextReader reader = new StreamReader(@"newoptions.xml");
+            object obj = deserializer.Deserialize(reader);
+            NewOptions = (NewOptions)obj;
+            reader.Close();
+        }
+
         public static UIBLC XMLDeserialization()
         {
             XmlSerializer deserializer = new XmlSerializer(typeof(UIBLC));
-            // WARNING !!! You might need to change this link in order to make this project work
             TextReader reader = new StreamReader(@"UIBLC.xml");
             object obj = deserializer.Deserialize(reader);
             UIBLC uW = (UIBLC)obj;
@@ -24,13 +34,21 @@ namespace Uwarcraft.Units
         public static starting XMLStarting()
         {
             XmlSerializer deserializer = new XmlSerializer(typeof(starting));
-            // WARNING !!! You might need to change this link in order to make this project work
             TextReader reader = new StreamReader(@"starting.xml");
             object obj = deserializer.Deserialize(reader);
             starting s = (starting)obj;
             reader.Close();
             return s;
         }
+        //public static NewOptions XMLNewOptions()
+        //{
+        //    XmlSerializer deserializer = new XmlSerializer(typeof(NewOptions));
+        //    TextReader reader = new StreamReader(@"newoptions.xml");
+        //    object obj = deserializer.Deserialize(reader);
+        //    NewOptions no = (NewOptions)obj;
+        //    reader.Close();
+        //    return no;
+        //}
     }
 
     public class UIBLC
@@ -42,5 +60,18 @@ namespace Uwarcraft.Units
     public class starting
     {
         public int resources { get; set; }
+    }
+
+    public class NewOptions
+    {
+        public string[] FarmBuildings { get; set; }
+        public string[] FarmUnits { get; set; }
+        public string[] BarrackBuildings { get; set; }
+        public string[] BarrackUnits { get; set; }
+        public string[] BowWorkshopBuildings { get; set; }
+        public string[] BowWorkshopUnits { get; set; }
+        public string[] TowerBuildings { get; set; }
+        public string[] BlacksmithUnits { get; set; }
+
     }
 }
