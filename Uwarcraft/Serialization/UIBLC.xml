@@ -2,7 +2,7 @@
 <UIBLC xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <buildingTypes>
     <string>Farm</string>
-    <string>Barack</string>
+    <string>Barrack</string>
     <string>BowWorkshop</string>
     <string>Tower</string>
     <string>Blacksmith</string>

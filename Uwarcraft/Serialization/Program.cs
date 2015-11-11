@@ -17,7 +17,7 @@ namespace Serialization
         public static void Main(string[] args)
         {
             
-            var buildingTypes = new string[5] {"Farm", "Barack","BowWorkshop","Tower","Blacksmith" };
+            var buildingTypes = new string[5] {"Farm", "Barrack","BowWorkshop","Tower","Blacksmith" };
             var unitTypes = new string[4] { "Peasant", "Archer", "Clubman", "SwordFighter" };
             UIBLC uW = new UIBLC();
             uW.BuildingTypes = buildingTypes;
@@ -42,7 +42,7 @@ namespace Serialization
         {
             XmlSerializer serializer = new XmlSerializer(typeof(UIBLC));
             // WARNING !!! You might need to change this link in order to make this project work
-            using (TextWriter writer = new StreamWriter(@"UIBLC.xml")) 
+            using (TextWriter writer = new StreamWriter(@"C:/Users/Andrei/Source/Repos/uWarcraft/Uwarcraft/Serialization/UIBLC.xml")) 
             {
                 serializer.Serialize(writer, uW);
             }
@@ -52,7 +52,7 @@ namespace Serialization
         {
             XmlSerializer serializer = new XmlSerializer(typeof(Starting));
             // WARNING !!! You might need to change this link in order to make this project work
-            using (TextWriter writer = new StreamWriter(@"starting.xml"))
+            using (TextWriter writer = new StreamWriter(@"C:/Users/Andrei/Source/Repos/uWarcraft/Uwarcraft/Serialization/starting.xml"))
             {
                 serializer.Serialize(writer, s);
             }
@@ -62,7 +62,7 @@ namespace Serialization
         {
             XmlSerializer serializer = new XmlSerializer(typeof(NewOptions));
             // WARNING !!! You might need to change this link in order to make this project work
-            using (TextWriter writer = new StreamWriter(@"newoptions.xml"))
+            using (TextWriter writer = new StreamWriter(@"C:/Users/Andrei/Source/Repos/uWarcraft/Uwarcraft/Serialization/newoptions.xml"))
             {
                 serializer.Serialize(writer, no);
             }
