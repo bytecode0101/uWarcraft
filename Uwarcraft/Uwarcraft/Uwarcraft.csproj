@@ -57,6 +57,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Game\FinderBot.cs" />
+    <Compile Include="Game\MapCell.cs" />
+    <Compile Include="Game\PathFinder.cs" />
     <Compile Include="Game\StateMachine\Build.cs" />
     <Compile Include="Game\StateMachine\BuildCommandEventArgs.cs" />
     <Compile Include="Game\StateMachine\ICommand.cs" />
