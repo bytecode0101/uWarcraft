@@ -22,7 +22,7 @@ namespace Uwarcraft.Units
             Complete = false;
             Life = 100;
             Location = location;
-
+            Type = "BowWorkshop";
         }
 
         public override void StartBuilding()

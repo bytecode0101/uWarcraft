@@ -14,7 +14,8 @@ namespace Uwarcraft.Units
         
         public int Life { get; set; }
         public int DamageTaken { get; set; }
-        
+        public string Type { get; set; }
+
         public Game.Point Location { get; set; }
         public List<AbstractBuildUnitCapability> BuildUnitCapabilities { get; set; }
         public List<AbstractBuildBuildingCapability> BuildBuildingsCapabilities { get; set; }

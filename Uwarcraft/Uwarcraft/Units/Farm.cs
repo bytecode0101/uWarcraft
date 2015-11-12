@@ -15,13 +15,13 @@ namespace Uwarcraft.Units
 
         public Farm(Game.Point location)
         {
-            BuildBuildingsCapabilities = new List<AbstractBuildBuildingCapability>();
-            BuildUnitCapabilities = new List<AbstractBuildUnitCapability>();
-            BuildBuildingsCapabilities.Add(new BuildBarrackCapability());
+            //BuildBuildingsCapabilities = new List<AbstractBuildBuildingCapability>();
+            //BuildUnitCapabilities = new List<AbstractBuildUnitCapability>();
+            //BuildBuildingsCapabilities.Add(new BuildBarrackCapability());
             Complete = false;
             Life = 100;
             Location = location;
-
+            Type = "Farm";
         }
 
         public override void StartBuilding()
