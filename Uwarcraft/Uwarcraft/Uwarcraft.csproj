@@ -112,6 +112,7 @@
     <Compile Include="Units\IBuilding.cs" />
     <Compile Include="Units\IUnit.cs" />
     <Compile Include="Units\Barracks.cs" />
+    <Compile Include="Units\UnitFactory.cs" />
     <Compile Include="Units\XMLWork.cs" />
     <Compile Include="UpgradeBuilding.cs" />
     <Compile Include="User.cs" />

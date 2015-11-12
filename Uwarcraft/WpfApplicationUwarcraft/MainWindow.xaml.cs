@@ -27,6 +27,7 @@ namespace WpfApplicationUwarcraft
     public partial class MainWindow : Window
     {        
         public event EventHandler<BuildCommandEventArgs> BuildCommand;
+        public event EventHandler<BuildCommandEventArgs> TrainCommand;
 
         public Game g;
 
@@ -42,6 +43,7 @@ namespace WpfApplicationUwarcraft
             var buildings = st.PlayerBase.Buildings;
             var units = st.PlayerBase.Units;
             BuildCommand += st.OnBuildCommand;
+            TrainCommand += st.OnTrainCommand;
             Console.ReadLine();
 
             Uwarcraft.Units.UIBLC denumiri = new Uwarcraft.Units.UIBLC();
@@ -97,8 +99,7 @@ namespace WpfApplicationUwarcraft
                 BuildCommandEventArgs e = new BuildCommandEventArgs() { Coords = coords, Type = type };
                 BuildCommand(this, e);
                 var st = (PlayState)g.CurrentState;
-                var buildings = st.PlayerBase.Buildings;
-                var units = st.PlayerBase.Units;
+                var buildings = st.PlayerBase.Buildings;                
                 stack3.Children.Clear();
                 for (int i = 0; i < st.PlayerBase.Buildings.Count; i++)
                 {
@@ -106,16 +107,45 @@ namespace WpfApplicationUwarcraft
                     item.Name = "b"+i.ToString();
                     item.Text = string.Format("{0} {1} {2} {3} {4}", st.PlayerBase.Buildings[i].Type, st.PlayerBase.Buildings[i].Life, st.PlayerBase.Buildings[i].DamageTaken, st.PlayerBase.Buildings[i].Location.ToString(), st.PlayerBase.Buildings[i].Complete.ToString());
                     stack3.Children.Add(item);
+                    textBox3.Text = string.Format("Farm{0}  Barrack{1}  BowWorkshop{2}  Tower{3}", st.PlayerBase.CountBuildings["Farm"], st.PlayerBase.CountBuildings["Barrack"], st.PlayerBase.CountBuildings["BowWorkshop"], st.PlayerBase.CountBuildings["Tower"]);
                 }
             }
         }
 
-        private void button_Click_1(object sender, RoutedEventArgs e)
+        private void g2_Click(object sender, RoutedEventArgs e)
         {
-            Map M = new Map();
-            M = M.Run(32,32);
-            e.Handled = true;            
+            e.Handled = true;
+            var btn = (Button)e.OriginalSource;
+            int x = Int32.Parse(textBox1.Text);
+            int y = Int32.Parse(textBox2.Text);
+            OnTrainCommand(btn.Name, new Uwarcraft.Game.Point(x, y));
         }
+
+        public void OnTrainCommand(string type, Uwarcraft.Game.Point coords)
+        {
+            if (TrainCommand != null)
+            {
+                BuildCommandEventArgs e = new BuildCommandEventArgs() { Coords = coords, Type = type };
+                TrainCommand(this, e);
+                var st = (PlayState)g.CurrentState;                
+                var units = st.PlayerBase.Units;
+                stack4.Children.Clear();
+                for (int i = 0; i < st.PlayerBase.Units.Count; i++)
+                {
+                    TextBlock item = new TextBlock();
+                    item.Name = "u" + i.ToString();
+                    item.Text = string.Format("{0} {1} {2} {3}", st.PlayerBase.Units[i].Type, st.PlayerBase.Units[i].unitHealth, st.PlayerBase.Units[i].unitDamageSuffered, st.PlayerBase.Units[i].position.ToString());
+                    stack4.Children.Add(item);                    
+                }
+            }
+        }
+
+        //private void button_Click_1(object sender, RoutedEventArgs e)
+        //{
+        //    Map M = new Map();
+        //    M = M.Run(Int32.Parse(textBox1.Text), Int32.Parse(textBox2.Text));
+        //    e.Handled = true;            
+        //}
     }
 
     //public class BuildCommandEventArgs

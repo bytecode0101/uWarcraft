@@ -8,11 +8,15 @@ namespace Uwarcraft.Game.StateMachine
     {
         public override event StateFinished StateFinishedEventHandler;
         //public event EventHandler<BuildCommandEventArgs> BuildCommand;
-        public PlayerBase PlayerBase;
+        public PlayerBase PlayerBase { get; set; }
+        public Map Map { get; set; }
 
         public PlayState ()
         {
-            PlayerBase = new PlayerBase();
+            
+            Map = new Map();
+            Map = Map.Run(24, 24);
+            PlayerBase = new PlayerBase(Map);
         }
 
         public override void Run()
@@ -30,7 +34,10 @@ namespace Uwarcraft.Game.StateMachine
             this.PlayerBase.Build(type, coords);
         }
 
+        public void OnTrainCommand(object source, BuildCommandEventArgs e)
+        {
+            this.PlayerBase.Train(e.Type, e.Coords);
+        }
 
-        
     }
 }

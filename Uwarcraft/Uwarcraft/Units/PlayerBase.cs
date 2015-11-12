@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using Uwarcraft.Game;
 using System.Text;
 
 namespace Uwarcraft.Units
@@ -18,10 +18,13 @@ namespace Uwarcraft.Units
         public Dictionary<string, int> CountUnits;
 
         private BuildingFactory factory;
+        private UnitFactory unitFactory;
         private AddNewOptions newOptions;
+        private Map map;
 
-        public PlayerBase()
+        public PlayerBase(Map _map)
         {
+            map = _map;
             BuildCapabilitiesBuildings = new Dictionary<string, bool>();
             BuildCapabilitiesUnits = new Dictionary<string, bool>();
             CountBuildings = new Dictionary<string, int>();
@@ -43,35 +46,55 @@ namespace Uwarcraft.Units
             }
             BuildCapabilitiesBuildings["Farm"] = true;
             factory = new BuildingFactory();
+            unitFactory = new UnitFactory();
             newOptions = new AddNewOptions();
         }
 
         public void Build(string buildingType, Game.Point coords)
         {
-            if (BuildCapabilitiesBuildings[buildingType])
+            if (map.Data[coords.y][coords.x].Use==""&& map.isValidForUnit(coords))
             {
-                AbstractBuilding newbuilding = factory.Build(buildingType, coords);
-                Buildings.Add(newbuilding);
-                if (CountBuildings[buildingType]==0)
+                if (BuildCapabilitiesBuildings[buildingType])
                 {
-                    string[] b = newOptions.Buildings(buildingType);
-                    if (b!=null)
+                    AbstractBuilding newbuilding = factory.Build(buildingType, coords);
+                    Buildings.Add(newbuilding);
+                    map.Data[coords.y][coords.x].Use = newbuilding.Type;
+                    if (CountBuildings[buildingType] == 0)
                     {
-                        foreach (string item in b)
+                        string[] b = newOptions.Buildings(buildingType);
+                        if (b != null)
                         {
-                            BuildCapabilitiesBuildings[item] = true;
+                            foreach (string item in b)
+                            {
+                                BuildCapabilitiesBuildings[item] = true;
+                            }
                         }
-                    }                    
-                    string[] u = newOptions.Units(buildingType);
-                    if (u != null)
-                    {
-                        foreach (string item in u)
+                        string[] u = newOptions.Units(buildingType);
+                        if (u != null)
                         {
-                            BuildCapabilitiesUnits[item] = true;
+                            foreach (string item in u)
+                            {
+                                BuildCapabilitiesUnits[item] = true;
+                            }
                         }
                     }
+                    CountBuildings[buildingType]++;
                 }
-                CountBuildings[buildingType]++;
+            }
+        }
+
+        public void Train(string unitType, Game.Point coords)
+        {
+            if (map.Data[coords.y][coords.x].Use == "" && map.isValidForUnit(coords))
+            {
+                if (BuildCapabilitiesUnits[unitType])
+                {
+                    IUnit newUnit = unitFactory.Train(unitType, coords);
+                    Units.Add(newUnit);
+                    map.Data[coords.y][coords.x].Use = "unit";
+                    
+                    CountUnits[unitType]++;
+                }
             }
         }
     }

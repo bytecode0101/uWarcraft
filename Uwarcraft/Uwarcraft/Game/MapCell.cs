@@ -9,7 +9,7 @@ namespace Uwarcraft.Game
     public class MapCell
     {
         public int Height;
-        public string Use { get; private set; }
+        public string Use { get; set; }
 
         public MapCell(int height = 0, string use = "")
         {

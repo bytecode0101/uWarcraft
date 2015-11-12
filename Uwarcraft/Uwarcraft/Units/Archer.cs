@@ -13,6 +13,7 @@ namespace Uwarcraft.Units
         public int unitDamageSuffered { get; set; }
         public int unitAttackPower { get; set; }
         public Game.Point position { get; set; }
+        public string Type { get; set; }
 
         public Archer(Game.Point xy)
         {
@@ -20,6 +21,7 @@ namespace Uwarcraft.Units
             unitHealth = 30;
             unitSpeed = 1;
             unitAttackPower = 4;
+            Type = "Archer";
         }
 
         public void Attack(IUnit target)

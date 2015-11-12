@@ -13,6 +13,7 @@ namespace Uwarcraft.Units
         public int unitDamageSuffered { get; set; }
         public int unitAttackPower { get; set; }
         public Game.Point position { get; set; }
+        public string Type { get; set; }
 
         public Peasant (Game.Point xy)
         {
@@ -20,6 +21,7 @@ namespace Uwarcraft.Units
             unitHealth = 20;
             unitSpeed = 1;
             unitAttackPower = 1;
+            Type = "Peasant";
         }
 
         public void Attack(IUnit target)
