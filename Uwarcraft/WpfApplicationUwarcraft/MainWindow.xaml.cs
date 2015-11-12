@@ -109,6 +109,13 @@ namespace WpfApplicationUwarcraft
                 }
             }
         }
+
+        private void button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Map M = new Map();
+            M = M.Run(32,32);
+            e.Handled = true;            
+        }
     }
 
     //public class BuildCommandEventArgs
