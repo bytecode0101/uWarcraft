@@ -34,12 +34,12 @@ namespace Uwarcraft.Units
             Buildings = new List<AbstractBuilding>();
             Units = new List<IUnit>();
             Resources = XMLWork.XMLStarting().resources;
-            foreach (string item in xml.buildingTypes)
+            foreach (string item in xml.BuildingTypes)
             {
                 BuildCapabilitiesBuildings.Add(item, false);
                 CountBuildings.Add(item, 0);
             }
-            foreach (string item in xml.unitTypes)
+            foreach (string item in xml.UnitTypes)
             {
                 BuildCapabilitiesUnits.Add(item, false);
                 CountUnits.Add(item, 0);
@@ -79,6 +79,7 @@ namespace Uwarcraft.Units
                         }
                     }
                     CountBuildings[buildingType]++;
+                    
                 }
             }
         }

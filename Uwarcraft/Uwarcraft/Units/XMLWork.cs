@@ -53,8 +53,8 @@ namespace Uwarcraft.Units
 
     public class UIBLC
     {
-        public string[] buildingTypes { get; set; }
-        public string[] unitTypes { get; set; }
+        public string[] BuildingTypes { get; set; }
+        public string[] UnitTypes { get; set; }
     }
 
     public class starting

@@ -69,13 +69,13 @@ namespace Serialization
         }
     }
 
-    public class UIBLC
-    {
-        public string[] BuildingTypes { get; set; }
-        public string[] UnitTypes { get; set; }
-        //public AbstractBuildBuildingCapability[] buildingTypes { get; set; }
-        //public AbstractBuildUnitCapability[] unitTypes { get; set; }
-    }
+    //public class UIBLC
+    //{
+    //    public string[] BuildingTypes { get; set; }
+    //    public string[] UnitTypes { get; set; }
+    //    //public AbstractBuildBuildingCapability[] buildingTypes { get; set; }
+    //    //public AbstractBuildUnitCapability[] unitTypes { get; set; }
+    //}
 
     public class Starting
     {

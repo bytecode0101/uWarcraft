@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <UIBLC xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <buildingTypes>
+  <BuildingTypes>
     <string>Farm</string>
     <string>Barrack</string>
     <string>BowWorkshop</string>
     <string>Tower</string>
     <string>Blacksmith</string>
-  </buildingTypes>
-  <unitTypes>
+  </BuildingTypes>
+  <UnitTypes>
     <string>Peasant</string>
     <string>Archer</string>
     <string>Clubman</string>
     <string>SwordFighter</string>
-  </unitTypes>
+  </UnitTypes>
 </UIBLC>

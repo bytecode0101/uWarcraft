@@ -3,17 +3,19 @@ using Uwarcraft.Units;
 
 namespace Uwarcraft.Game.StateMachine
 {
-    
+
     public class PlayState : AbstractState
     {
+        public event EventHandler NewUpdate;
+
         public override event StateFinished StateFinishedEventHandler;
         //public event EventHandler<BuildCommandEventArgs> BuildCommand;
         public PlayerBase PlayerBase { get; set; }
         public Map Map { get; set; }
 
-        public PlayState ()
+        public PlayState()
         {
-            
+
             Map = new Map();
             Map = Map.Run(24, 24);
             PlayerBase = new PlayerBase(Map);
@@ -24,7 +26,7 @@ namespace Uwarcraft.Game.StateMachine
 
         }
 
-        public void OnBuildCommand (object source, BuildCommandEventArgs e)
+        public void OnBuildCommand(object source, BuildCommandEventArgs e)
         {
             Build(e.Type, e.Coords);
         }
@@ -32,6 +34,11 @@ namespace Uwarcraft.Game.StateMachine
         public void Build(string type, Point coords)
         {
             this.PlayerBase.Build(type, coords);
+            if (NewUpdate != null)
+            {
+                NewUpdate(this, new EventArgs() );
+            }
+
         }
 
         public void OnTrainCommand(object source, BuildCommandEventArgs e)
