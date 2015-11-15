@@ -139,6 +139,7 @@ namespace WpfApplicationUwarcraft
             ShowBuildMenu();
             ShowTrainMenu();
             ShowUnits();
+            ShowOrders();
         }
 
         public void OnBuildCommand(string type, Uwarcraft.Game.Point coords)
@@ -148,7 +149,7 @@ namespace WpfApplicationUwarcraft
                 BuildCommandEventArgs e = new BuildCommandEventArgs() { Coords = coords, Type = type };
                 BuildCommand(this, e);
                 var st = (PlayState)g.CurrentState;
-                st.Run();
+                //st.Run();
                 var buildings = st.PlayerBase.Buildings;
                 stack3.Children.Clear();
                 for (int i = 0; i < st.PlayerBase.Buildings.Count; i++)
@@ -184,7 +185,7 @@ namespace WpfApplicationUwarcraft
                 {
                     TextBlock item = new TextBlock();
                     item.Name = "u" + i.ToString();
-                    item.Text = string.Format("{0} {1} {2} {3}", st.PlayerBase.Units[i].Type, st.PlayerBase.Units[i].unitHealth, st.PlayerBase.Units[i].unitDamageSuffered, st.PlayerBase.Units[i].position.ToString());
+                    item.Text = string.Format("{0} {1} {2} {3} {4}", st.PlayerBase.Units[i].Type, st.PlayerBase.Units[i].unitHealth, st.PlayerBase.Units[i].unitDamageSuffered, st.PlayerBase.Units[i].position.ToString(), st.PlayerBase.Units[i].UnitRange);
                     stack4.Children.Add(item);
                 }
             }
@@ -193,9 +194,11 @@ namespace WpfApplicationUwarcraft
         private void buta_click(object sender, RoutedEventArgs e)
         {
             var v = (PlayState)g.CurrentState;
-            Attack att = new Attack(st.PlayerBase.Units[1], v.Map, st.PlayerBase.Units[0]);
-            v.Orders.Add(att);
-            v.Run();
+            int x = Int32.Parse(textBox1.Text);
+            int y = Int32.Parse(textBox2.Text);
+            Uwarcraft.Units.IOrder att = new Attack(st.PlayerBase.Units[x], v.Map, st.PlayerBase.Units[y]);
+            v.AddAttack(att);
+            ShowOrders();
             e.Handled = true;
         }
 
@@ -215,6 +218,31 @@ namespace WpfApplicationUwarcraft
             catch (Exception)
             {
             }
+        }
+
+        private void ShowOrders()
+        {
+            try
+            {
+                stack5.Children.Clear();
+                for (int i = 0; i < st.Orders.Count; i++)
+                {
+                    TextBlock item = new TextBlock();
+                    item.Name = "o" + i.ToString();
+                    var j = (Attack)st.Orders[i];
+                    item.Text = string.Format("{0} {1} -> {2} {3} ", j.Unit.Type, j.Unit.position, j.Target.Type, j.Target.position);
+                    stack5.Children.Add(item);
+                }
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void button_Click_1(object sender, RoutedEventArgs e)
+        {
+            st.Run();
+            e.Handled = true;
         }
     }
 

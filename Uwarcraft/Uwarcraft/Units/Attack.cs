@@ -7,7 +7,7 @@ using Uwarcraft.Game;
 
 namespace Uwarcraft.Units
 {
-    public class Attack : ICommand
+    public class Attack : IOrder
     {
         public IUnit Target { get; set; }
         public Map Map { get; set; }

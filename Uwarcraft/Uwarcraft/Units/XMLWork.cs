@@ -15,7 +15,7 @@ namespace Uwarcraft.Units
         public XMLWork()
         {
             XmlSerializer deserializer = new XmlSerializer(typeof(NewOptions));
-            TextReader reader = new StreamReader(@"C:/Users/Andrei/Source/Repos/uWarcraft/Uwarcraft/Serialization/newoptions.xml");
+            TextReader reader = new StreamReader(@"newoptions.xml");
             object obj = deserializer.Deserialize(reader);
             NewOptions = (NewOptions)obj;
             reader.Close();
@@ -24,7 +24,7 @@ namespace Uwarcraft.Units
         public static UIBLC XMLDeserialization()
         {
             XmlSerializer deserializer = new XmlSerializer(typeof(UIBLC));
-            TextReader reader = new StreamReader(@"C:/Users/Andrei/Source/Repos/uWarcraft/Uwarcraft/Serialization/UIBLC.xml");
+            TextReader reader = new StreamReader(@"UIBLC.xml");
             object obj = deserializer.Deserialize(reader);
             UIBLC uW = (UIBLC)obj;
             reader.Close();
@@ -34,7 +34,7 @@ namespace Uwarcraft.Units
         public static Starting XMLStarting()
         {
             XmlSerializer deserializer = new XmlSerializer(typeof(Starting));
-            TextReader reader = new StreamReader(@"C:/Users/Andrei/Source/Repos/uWarcraft/Uwarcraft/Serialization/starting.xml");
+            TextReader reader = new StreamReader(@"starting.xml");
             object obj = deserializer.Deserialize(reader);
             Starting s = (Starting)obj;
             reader.Close();

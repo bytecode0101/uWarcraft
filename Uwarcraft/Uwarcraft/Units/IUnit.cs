@@ -8,6 +8,7 @@ namespace Uwarcraft.Units
 {
     public interface IUnit
     {
+        event EventHandler UnitDestroyed;
         int unitCost { get; set; }
         int unitHealth { get; set; }
         int unitSpeed { get; set; }

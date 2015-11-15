@@ -7,8 +7,19 @@ using System.Threading.Tasks;
 namespace Uwarcraft.Units
 {
 
-    class events
+    public class events
     {
+        //private static events The=new events();
+        //
 
+        //events ()
+        //{
+
+        //}
+
+        //public static events GetInstance()
+        //{
+        //    return The;
+        //}
     }
 }

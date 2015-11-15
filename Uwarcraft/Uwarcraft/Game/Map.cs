@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using CSVCom;
+//using CSVCom;
 
 namespace Uwarcraft.Game
 {
@@ -69,12 +69,12 @@ namespace Uwarcraft.Game
             }
 
 
-            CSVDoc D = new CSVDoc();
-            for (int i = 0; i < map.Data.Count; i++)
-                for (int j = 0; j < map.Data[i].Count; j++)
-                    D.AddValueAt(i, j, map.Data[i][j].Height.ToString());
-            fp.ForEach(P => D.AddValueAt(P.y, P.x, "P"));
-            D.Save("Map.csv");
+            //CSVDoc D = new CSVDoc();
+            //for (int i = 0; i < map.Data.Count; i++)
+            //    for (int j = 0; j < map.Data[i].Count; j++)
+            //        D.AddValueAt(i, j, map.Data[i][j].Height.ToString());
+            //fp.ForEach(P => D.AddValueAt(P.y, P.x, "P"));
+            //D.Save("Map.csv");
             return map;
         }
     }

@@ -15,6 +15,7 @@ namespace Uwarcraft.Units
         public int UnitRange { get; set; }
         public Game.Point position { get; set; }
         public string Type { get; set; }
+        public event EventHandler UnitDestroyed;
 
         public Archer(Game.Point xy)
         {
@@ -29,23 +30,23 @@ namespace Uwarcraft.Units
         public void Attack(IUnit target)
         {
             target.TakeHit(unitAttackPower);
-            if (target.unitDamageSuffered >= target.unitHealth)
-            {
-                target.unitCost = 0;
-                target.unitHealth = 0;
-                target.unitSpeed = 0;
-                target.unitAttackPower = 0;
-                target.position = null;
-            }
+            //if (target.unitDamageSuffered >= target.unitHealth)
+            //{
+            //    target.unitCost = 0;
+            //    target.unitHealth = 0;
+            //    target.unitSpeed = 0;
+            //    target.unitAttackPower = 0;
+            //    target.position = null;
+            //}
         }
 
         public void Attack(AbstractBuilding target)
         {
             target.TakeHit(unitAttackPower);
-            if (target.Life <= target.DamageTaken)
-            {
-                target = null;
-            }
+            //if (target.Life <= target.DamageTaken)
+            //{
+            //    target = null;
+            //}
         }
 
         public void Move(int i)
@@ -64,6 +65,13 @@ namespace Uwarcraft.Units
         public void TakeHit(int attackPower)
         {
             unitDamageSuffered += attackPower;
+            if (unitHealth <= unitDamageSuffered)
+            {
+                if (UnitDestroyed != null)
+                {
+                    UnitDestroyed(this, new EventArgs());
+                }
+            }
         }
     }
 }

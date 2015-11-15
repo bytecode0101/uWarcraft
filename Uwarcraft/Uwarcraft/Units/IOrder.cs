@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Uwarcraft.Game.StateMachine
+namespace Uwarcraft.Units
 {
-    interface ICommand
+    public interface IOrder
     {
+        IUnit Unit { get; set; }
+
         void execute();
     }
 }

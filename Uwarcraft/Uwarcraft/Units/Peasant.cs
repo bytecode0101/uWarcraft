@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 namespace Uwarcraft.Units
-{
+{    
     public class Peasant : Units.IUnit
     {
         public int unitCost { get; set; }
@@ -15,8 +15,9 @@ namespace Uwarcraft.Units
         public int UnitRange { get; set; }
         public Game.Point position { get; set; }
         public string Type { get; set; }
+        public event EventHandler UnitDestroyed;
 
-        public Peasant (Game.Point xy)
+        public Peasant(Game.Point xy)
         {
             position = xy;
             unitHealth = 20;
@@ -38,11 +39,11 @@ namespace Uwarcraft.Units
         public void Attack(AbstractBuilding target)
         {
             target.TakeHit(unitAttackPower);
-            target.TakeHit(unitAttackPower);
-            if (target.Life <= target.DamageTaken)
-            {
-                target = null;
-            }
+            //target.TakeHit(unitAttackPower);
+            //if (target.Life <= target.DamageTaken)
+            //{
+            //    target = null;
+            //}
         }
 
         public void Move(int i)
@@ -61,6 +62,13 @@ namespace Uwarcraft.Units
         public void TakeHit(int attackPower)
         {
             unitDamageSuffered += attackPower;
+            if (unitHealth <= unitDamageSuffered)
+            {
+                if (UnitDestroyed!=null)
+                {
+                    UnitDestroyed(this, new EventArgs());
+                }
+            }
         }
     }
 }

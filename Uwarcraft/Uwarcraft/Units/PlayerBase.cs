@@ -84,7 +84,7 @@ namespace Uwarcraft.Units
             }
         }
 
-        public void Train(string unitType, Game.Point coords)
+        public bool Train(string unitType, Game.Point coords)
         {
             if (map.Data[coords.y][coords.x].Use == "" && map.isValidForUnit(coords))
             {
@@ -92,11 +92,12 @@ namespace Uwarcraft.Units
                 {
                     IUnit newUnit = unitFactory.Train(unitType, coords);
                     Units.Add(newUnit);
-                    map.Data[coords.y][coords.x].Use = "unit";
-                    
+                    map.Data[coords.y][coords.x].Use = "unit";                    
                     CountUnits[unitType]++;
+                    return true;
                 }
             }
+            return false;
         }
     }
 }

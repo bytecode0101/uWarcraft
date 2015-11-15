@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Uwarcraft.Game.StateMachine
 {
-    class Build : ICommand
-    {
-        public void execute()
-        {
-            throw new NotImplementedException();
-        }
-    }
+    //class Build : ICommand
+    //{
+    //    public void execute()
+    //    {
+    //        throw new NotImplementedException();
+    //    }
+    //}
 }

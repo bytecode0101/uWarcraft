@@ -14,31 +14,52 @@ namespace Uwarcraft.Game.StateMachine
         //public event EventHandler<BuildCommandEventArgs> BuildCommand;
         public PlayerBase PlayerBase { get; set; }
         public Map Map { get; set; }
-        public List<Attack> Orders { get; set; }
+        public List<IOrder> Orders { get; set; }
+        List<IOrder> ordersToRemove;
 
         public PlayState()
         {
-            Orders = new List<Attack>();
+            Orders = new List<IOrder>();
             Map = new Map();
             Map = Map.Run(16, 16);
             PlayerBase = new PlayerBase(Map);
+            ordersToRemove = new List<IOrder>();
         }
 
         public override void Run()
         {
             //while (PlayerBase.CountBuildings["BowWorkshop"]!=3)
-            for (int i = 0; i < 3; i++)            
+            //for (int i = 0; i < 3; i++)            
+            //{
+            //Thread.Sleep(1300);
+
+            foreach (IOrder order in Orders)
             {
-                Thread.Sleep(1300);
-                foreach (Attack order in Orders)
+                order.execute();
+            }
+            foreach (IOrder item in ordersToRemove)
+            {
+                Orders.Remove(item);
+            }
+            ordersToRemove.Clear();
+            if (NewUpdate != null)
+            {
+                NewUpdate(this, new EventArgs());
+            }
+            //}
+        }
+
+        public void AddAttack(IOrder order)
+        {
+            foreach (IOrder item in Orders)
+            {
+                if (order.Unit == item.Unit)
                 {
-                    order.execute();
-                }
-                if (NewUpdate != null)
-                {
-                    NewUpdate(this, new EventArgs());
+                    Orders.Remove(item);
+                    break;
                 }
             }
+            Orders.Add(order);
         }
 
         public void OnBuildCommand(object source, BuildCommandEventArgs e)
@@ -51,15 +72,48 @@ namespace Uwarcraft.Game.StateMachine
             this.PlayerBase.Build(type, coords);
             if (NewUpdate != null)
             {
-                NewUpdate(this, new EventArgs() );
+                NewUpdate(this, new EventArgs());
             }
-
         }
 
         public void OnTrainCommand(object source, BuildCommandEventArgs e)
         {
-            this.PlayerBase.Train(e.Type, e.Coords);
+            if (this.PlayerBase.Train(e.Type, e.Coords))
+            {
+                PlayerBase.Units[PlayerBase.Units.Count - 1].UnitDestroyed += OnUnitDestroyed;
+            }
         }
 
+        public void OnUnitDestroyed(object source, EventArgs e)
+        {
+            foreach (IOrder item in Orders)
+            {
+                if (source == item.Unit)
+                {
+                    ordersToRemove.Add(item);
+                    break;
+                }
+            }
+            foreach (IOrder item in Orders)
+            {
+                try
+                {
+                    var j = (Attack)item;
+                    if (source == j.Target)
+                    {
+                        ordersToRemove.Add(item);                        
+                    }
+                }
+                catch (Exception)
+                {
+                }
+
+            }
+            PlayerBase.Units.Remove((IUnit)source);
+            if (NewUpdate != null)
+            {
+                NewUpdate(this, new EventArgs());
+            }
+        }
     }
 }
