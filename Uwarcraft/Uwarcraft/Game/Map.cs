@@ -26,7 +26,7 @@ namespace Uwarcraft.Game
             {
                 for (int j = 0; j < Data[i].Count; j++)
                 {
-                    if (R.Next(1, 101) < 32)
+                    if (R.Next(1, 101) < 25)
                         AddElement(new Point(i, j));
                 }
             }

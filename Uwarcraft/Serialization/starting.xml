@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<starting xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <resources>200</resources>
-</starting>
+<Starting xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Resources>200</Resources>
+</Starting>

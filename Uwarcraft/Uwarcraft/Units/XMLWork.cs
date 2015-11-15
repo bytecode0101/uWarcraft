@@ -31,12 +31,12 @@ namespace Uwarcraft.Units
             return uW;            
         }
 
-        public static starting XMLStarting()
+        public static Starting XMLStarting()
         {
-            XmlSerializer deserializer = new XmlSerializer(typeof(starting));
+            XmlSerializer deserializer = new XmlSerializer(typeof(Starting));
             TextReader reader = new StreamReader(@"C:/Users/Andrei/Source/Repos/uWarcraft/Uwarcraft/Serialization/starting.xml");
             object obj = deserializer.Deserialize(reader);
-            starting s = (starting)obj;
+            Starting s = (Starting)obj;
             reader.Close();
             return s;
         }
@@ -57,7 +57,7 @@ namespace Uwarcraft.Units
         public string[] UnitTypes { get; set; }
     }
 
-    public class starting
+    public class Starting
     {
         public int resources { get; set; }
     }

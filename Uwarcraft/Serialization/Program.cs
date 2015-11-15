@@ -8,6 +8,7 @@ using System.Xml.Serialization;
 using Uwarcraft;
 using Uwarcraft.Game.StateMachine;
 using Uwarcraft.Units;
+using Uwarcraft.Game;
 
 namespace Serialization
 {
@@ -36,8 +37,23 @@ namespace Serialization
             options.TowerBuildings = new string[1] { "Blacksmith" };
             options.BlacksmithUnits = new string[1] { "SwordFighter" };
             Serialize(options);
+            //var map = new Map();
+            //map = map.Run(16, 16);
+            //SerialMap(map);
+
         }
         //[XmlInclude(typeof(BuildFarmCapability)), XmlInclude(typeof(BuildBarrackCapability)), XmlInclude(typeof(BuildBowWorkshopCapability)), XmlInclude(typeof(BuildTowerCapability)), XmlInclude(typeof(BuildPeasantCapability)), XmlInclude(typeof(BuildArcherCapability))]
+        static public void SerialMap(Map _map)
+        {
+            XmlSerializer serializer = new XmlSerializer(typeof(Map));
+            // WARNING !!! You might need to change this link in order to make this project work
+            using (TextWriter writer = new StreamWriter(@"C:/Users/Andrei/Source/Repos/uWarcraft/Uwarcraft/Serialization/samplemap.xml"))
+            {
+                serializer.Serialize(writer, _map);
+            }
+        }
+
+
         static public void Serialize(UIBLC uW)
         {
             XmlSerializer serializer = new XmlSerializer(typeof(UIBLC));
@@ -67,6 +83,8 @@ namespace Serialization
                 serializer.Serialize(writer, no);
             }
         }
+
+
     }
 
     //public class UIBLC

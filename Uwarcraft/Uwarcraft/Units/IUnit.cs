@@ -13,12 +13,13 @@ namespace Uwarcraft.Units
         int unitSpeed { get; set; }
         int unitDamageSuffered { get; set; }
         int unitAttackPower { get; set; }
+        int UnitRange { get; set; }
         Game.Point position { get; set; }
         string Type { get; set; }
 
         void Attack(IUnit target);
         void Attack(AbstractBuilding target);
-        void Move();
+        void Move(int i);
         void Stop();
         void TakeHit(int attackPower);
     }

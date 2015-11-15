@@ -17,6 +17,7 @@ using System.Windows.Shapes;
 using Uwarcraft.Game;
 using Uwarcraft.Units;
 using Uwarcraft.Game.StateMachine;
+using NLog;
 
 namespace WpfApplicationUwarcraft
 {
@@ -28,7 +29,7 @@ namespace WpfApplicationUwarcraft
     {
         public event EventHandler<BuildCommandEventArgs> BuildCommand;
         public event EventHandler<BuildCommandEventArgs> TrainCommand;
-
+        private static Logger log = LogManager.GetCurrentClassLogger(); 
         Game g;
         PlayState st;
         UIBLC denumiri;
@@ -36,15 +37,18 @@ namespace WpfApplicationUwarcraft
         public MainWindow()
         {
             InitializeComponent();
-            Console.WriteLine("starting thread");
+            log.Trace("MainWindow initialized");
             //Thread states = new Thread(new ThreadStart(runGame));
             //states.Start();
             denumiri = new Uwarcraft.Units.UIBLC();
             denumiri = XMLWork.XMLDeserialization();
             g = new Game(new PlayState());
             st = (PlayState)g.CurrentState;
-            var buildings = st.PlayerBase.Buildings;
-            var units = st.PlayerBase.Units;
+            //Thread gRun = new Thread(st.Run);
+            //gRun.Start();
+            st.Run();
+            //var buildings = st.PlayerBase.Buildings;
+            //var units = st.PlayerBase.Units;
             BuildCommand += st.OnBuildCommand;
             TrainCommand += st.OnTrainCommand;
             st.NewUpdate += OnNewUpdate;
@@ -60,50 +64,67 @@ namespace WpfApplicationUwarcraft
                 item.Name = i.ToString();
                 item.Text = string.Format("{0} {1} {2} {3} {4}", st.PlayerBase.Buildings[i].Type, st.PlayerBase.Buildings[i].Life, st.PlayerBase.Buildings[i].DamageTaken, st.PlayerBase.Buildings[i].Location.ToString(), st.PlayerBase.Buildings[i].Complete.ToString());
                 stack3.Children.Add(item);
+                log.Trace("showing Building Options");
             }
         }
 
         public void ShowTrainMenu()
         {
-            string[] B = denumiri.UnitTypes;
-            stack2.Children.Clear();
-            for (int i = 0; i < B.Length; i++)
+            try
             {
-                if (st.PlayerBase.BuildCapabilitiesUnits[B[i]] == true)
+                string[] B = denumiri.UnitTypes;
+                stack2.Children.Clear();
+                for (int i = 0; i < B.Length; i++)
                 {
-                    Button button1 = new Button();
-                    button1.Content = B[i];
-                    button1.Name = B[i];
-                    stack2.Children.Add(button1);
+                    if (st.PlayerBase.BuildCapabilitiesUnits[B[i]] == true)
+                    {
+                        Button button1 = new Button();
+                        button1.Content = B[i];
+                        button1.Name = B[i];
+                        stack2.Children.Add(button1);
+                    }
                 }
+                log.Trace("TrainMenu refreshed");
+            }
+            catch (Exception)
+            {
             }
         }
 
         public void ShowBuildMenu()
         {
-            string[] A = denumiri.BuildingTypes;
-            stack1.Children.Clear();
-            for (int i = 0; i < A.Length; i++)
+            try
             {
-                if (st.PlayerBase.BuildCapabilitiesBuildings[A[i]] == true)
+                string[] A = denumiri.BuildingTypes;
+                stack1.Children.Clear();
+                for (int i = 0; i < A.Length; i++)
                 {
-                    Button button1 = new Button();
-                    button1.Content = A[i];
-                    button1.Name = A[i];
-                    stack1.Children.Add(button1);
-                }
+                    if (st.PlayerBase.BuildCapabilitiesBuildings[A[i]] == true)
+                    {
+                        Button button1 = new Button();
+                        button1.Content = A[i];
+                        button1.Name = A[i];
+                        stack1.Children.Add(button1);
+                    }
 
+                }
+                log.Trace("BuildMenu refreshed");
+            }
+            catch (Exception)
+            {
             }
         }
 
-        private void runGame()
-        {
-            Game g = new Game(new PlayState());
-            var st = (PlayState)g.CurrentState;
-            var buildings = st.PlayerBase.Buildings;
-            var units = st.PlayerBase.Units;
-            Console.ReadLine();
-        }
+        //private void runGame()
+        //{
+        //    Game g = new Game(new PlayState());
+        //    var st = (PlayState)g.CurrentState;
+        //    Thread gRun = new Thread(st.Run);
+        //    gRun.Start();
+        //    var buildings = st.PlayerBase.Buildings;
+        //    var units = st.PlayerBase.Units;
+        //    Console.ReadLine();
+        //}
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
@@ -113,10 +134,11 @@ namespace WpfApplicationUwarcraft
             OnBuildCommand(btn.Name, new Uwarcraft.Game.Point(x, y));
         }
 
-        public void OnNewUpdate(object source, EventArgs e )
+        public void OnNewUpdate(object source, EventArgs e)
         {
             ShowBuildMenu();
             ShowTrainMenu();
+            ShowUnits();
         }
 
         public void OnBuildCommand(string type, Uwarcraft.Game.Point coords)
@@ -126,6 +148,7 @@ namespace WpfApplicationUwarcraft
                 BuildCommandEventArgs e = new BuildCommandEventArgs() { Coords = coords, Type = type };
                 BuildCommand(this, e);
                 var st = (PlayState)g.CurrentState;
+                st.Run();
                 var buildings = st.PlayerBase.Buildings;
                 stack3.Children.Clear();
                 for (int i = 0; i < st.PlayerBase.Buildings.Count; i++)
@@ -167,12 +190,32 @@ namespace WpfApplicationUwarcraft
             }
         }
 
-        //private void button_Click_1(object sender, RoutedEventArgs e)
-        //{
-        //    Map M = new Map();
-        //    M = M.Run(Int32.Parse(textBox1.Text), Int32.Parse(textBox2.Text));
-        //    e.Handled = true;            
-        //}
+        private void buta_click(object sender, RoutedEventArgs e)
+        {
+            var v = (PlayState)g.CurrentState;
+            Attack att = new Attack(st.PlayerBase.Units[1], v.Map, st.PlayerBase.Units[0]);
+            v.Orders.Add(att);
+            v.Run();
+            e.Handled = true;
+        }
+
+        private void ShowUnits()
+        {
+            try
+            {
+                stack4.Children.Clear();
+                for (int i = 0; i < st.PlayerBase.Units.Count; i++)
+                {
+                    TextBlock item = new TextBlock();
+                    item.Name = "u" + i.ToString();
+                    item.Text = string.Format("{0} {1} {2} {3} {4}", st.PlayerBase.Units[i].Type, st.PlayerBase.Units[i].unitHealth, st.PlayerBase.Units[i].unitDamageSuffered, st.PlayerBase.Units[i].position.ToString(), st.PlayerBase.Units[i].UnitRange);
+                    stack4.Children.Add(item);
+                }
+            }
+            catch (Exception)
+            {
+            }
+        }
     }
 
     //public class BuildCommandEventArgs

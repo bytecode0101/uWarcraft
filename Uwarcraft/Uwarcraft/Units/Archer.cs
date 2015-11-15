@@ -12,6 +12,7 @@ namespace Uwarcraft.Units
         public int unitSpeed { get; set; }
         public int unitDamageSuffered { get; set; }
         public int unitAttackPower { get; set; }
+        public int UnitRange { get; set; }
         public Game.Point position { get; set; }
         public string Type { get; set; }
 
@@ -21,6 +22,7 @@ namespace Uwarcraft.Units
             unitHealth = 30;
             unitSpeed = 1;
             unitAttackPower = 4;
+            UnitRange = 5;
             Type = "Archer";
         }
 
@@ -46,9 +48,12 @@ namespace Uwarcraft.Units
             }
         }
 
-        public void Move()
+        public void Move(int i)
         {
-            throw new NotImplementedException();
+            int[] a = new int[8] { 1, 1, 1, 0, 0, -1, -1, -1 };
+            int[] b = new int[8] { -1, 0, 1, -1, 1, -1, 0, 1 };
+            position.x += a[i];
+            position.y += b[i];
         }
 
         public void Stop()

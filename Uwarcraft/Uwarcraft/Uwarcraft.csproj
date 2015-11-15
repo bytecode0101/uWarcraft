@@ -72,6 +72,7 @@
     <Compile Include="Units\AbstractBuildUnitCapability.cs" />
     <Compile Include="Units\AddNewOptions.cs" />
     <Compile Include="Units\Archer.cs" />
+    <Compile Include="Units\Attack.cs" />
     <Compile Include="Units\BowWorkshop.cs" />
     <Compile Include="Units\BuildArcherCapability.cs" />
     <Compile Include="Units\BuildBarracksCapability.cs" />
@@ -85,6 +86,8 @@
     <Compile Include="Units\BuildingFactory.cs" />
     <Compile Include="Units\BuildTowerCapability.cs" />
     <Compile Include="Units\events.cs" />
+    <Compile Include="Units\ICommand.cs" />
+    <Compile Include="Units\Pathfinding.cs" />
     <Compile Include="Units\Tower.cs" />
     <Compile Include="Units\BuildPeasantCapability.cs" />
     <Compile Include="Units\Farm.cs" />

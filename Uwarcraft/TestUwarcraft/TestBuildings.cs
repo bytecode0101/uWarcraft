@@ -47,7 +47,11 @@ namespace TestUwarcraft
             Assert.AreEqual(st.PlayerBase.Buildings[1].Location.y,17);
         }
 
+        //[Test]
+        //public void TestAstart()
+        //{
 
+        //}
 
         public void OnBuildCommand(string type, Point coords)
         {

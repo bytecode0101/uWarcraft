@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Threading;
 using Uwarcraft.Units;
 
 namespace Uwarcraft.Game.StateMachine
@@ -12,18 +14,31 @@ namespace Uwarcraft.Game.StateMachine
         //public event EventHandler<BuildCommandEventArgs> BuildCommand;
         public PlayerBase PlayerBase { get; set; }
         public Map Map { get; set; }
+        public List<Attack> Orders { get; set; }
 
         public PlayState()
         {
-
+            Orders = new List<Attack>();
             Map = new Map();
-            Map = Map.Run(24, 24);
+            Map = Map.Run(16, 16);
             PlayerBase = new PlayerBase(Map);
         }
 
         public override void Run()
         {
-
+            //while (PlayerBase.CountBuildings["BowWorkshop"]!=3)
+            for (int i = 0; i < 3; i++)            
+            {
+                Thread.Sleep(1300);
+                foreach (Attack order in Orders)
+                {
+                    order.execute();
+                }
+                if (NewUpdate != null)
+                {
+                    NewUpdate(this, new EventArgs());
+                }
+            }
         }
 
         public void OnBuildCommand(object source, BuildCommandEventArgs e)
