@@ -16,7 +16,7 @@ namespace Uwarcraft.Game.StateMachine
         {
             CurrentState = state;
             CurrentState.StateFinishedEventHandler += CurentState_StateFinishedEventHandler;
-            _state.Run();
+            //_state.Run();
         }
 
         private void CurentState_StateFinishedEventHandler(object sender, StateEventArgs e)

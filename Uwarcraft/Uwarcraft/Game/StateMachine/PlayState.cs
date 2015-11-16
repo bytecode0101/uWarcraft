@@ -1,108 +1,129 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Threading;
 using Uwarcraft.Units;
 
 namespace Uwarcraft.Game.StateMachine
 {
-    /// <summary>
-    /// temporary code checks if BuildingsCapabilities are working
-    /// </summary>
+
     public class PlayState : AbstractState
     {
+        public event EventHandler NewUpdate;
+        public event EventHandler <StringEventArgs> UIMessage;
+
         public override event StateFinished StateFinishedEventHandler;
-        //AbstractState nextState;
-        private PlayerBase playerBase;
-        private int intField;
-        private int intField2;
-        private AbstractBuilding[] buildings = new AbstractBuilding[9];
+        //public event EventHandler<BuildCommandEventArgs> BuildCommand;
+        public PlayerBase PlayerBase { get; set; }
+        public Map Map { get; set; }
+        public List<IOrder> Orders { get; set; }
+        List<IOrder> ordersToRemove;
+
+        public PlayState()
+        {
+            Orders = new List<IOrder>();
+            Map = new Map();
+            Map = Map.Run(16, 16);
+            PlayerBase = new PlayerBase(Map);
+            ordersToRemove = new List<IOrder>();
+        }
 
         public override void Run()
         {
-            playerBase = new PlayerBase();
-            int nrOfBuildings = 0;
-            IUnit p = new Peasant(new Point(14, 14));
+            //while (PlayerBase.CountBuildings["BowWorkshop"]!=3)
+            //for (int i = 0; i < 3; i++)            
+            //{
+            //Thread.Sleep(1300);
 
-            while (true)
+            foreach (IOrder order in Orders)
             {
+                order.execute();
+            }
+            foreach (IOrder item in ordersToRemove)
+            {
+                Orders.Remove(item);
+            }
+            ordersToRemove.Clear();
+            if (NewUpdate != null)
+            {
+                NewUpdate(this, new EventArgs());
+            }
+            //}
+        }
 
-                int nrOfOptions = ListBuildOptions();
-                int option = Select();
-                if (option <= nrOfOptions)
+        public void AddAttack(IOrder order)
+        {
+            foreach (IOrder item in Orders)
+            {
+                if (order.Unit == item.Unit)
                 {
-                    intField = option;
-                    intField2 = nrOfBuildings;
-                    buildings[nrOfBuildings] = playerBase.BuildingsCapabilities[option].Build(new Point(17- nrOfBuildings, 12+ nrOfBuildings));
-                    buildings[nrOfBuildings].BuildingComplete += Building_BuildingComplete;
-                    buildings[nrOfBuildings].StartBuilding();
-                    nrOfBuildings++;
-                    Console.WriteLine("total buildings ={0}", nrOfBuildings);
-                }
-                else
-                {
-                    Console.WriteLine("that option # does not exist");
-                }
-            }
-
-        }
-
-        private void Building_BuildingComplete()
-        {
-            try
-            {
-                playerBase.BuildingsCapabilities.Add(buildings[intField2].BuildBuildingsCapabilities[0]);
-            }
-            catch (ArgumentOutOfRangeException)
-            {
-            }
-            playerBase = EraseDuplicates(playerBase);
-            buildings[intField2].Complete = true;
-
-            Console.WriteLine("built " + buildings[intField2].GetType().ToString());
-
-        }
-
-        private int ListBuildOptions()
-        {
-            string[] msg = new string[5];
-            int i = 0;
-            foreach (AbstractBuildBuildingCapability cap in playerBase.BuildingsCapabilities)
-            {
-                msg[i] = cap.GetType().ToString();
-                msg[i] = msg[i].Substring(16, msg[i].Length - 26);
-                Console.Write("press {0} to", i);
-                Console.WriteLine(" " + msg[i]);
-                i = i + 1;
-            }
-            return i - 1;
-        }
-
-        private int Select()
-        {
-            int op = 30;
-            var ceva = Console.ReadLine();
-            try
-            {
-                op = Int32.Parse(ceva);
-                return op;
-            }
-
-            catch (FormatException)
-            {
-                Console.WriteLine("enter a number please!");
-                op = Select();
-            }
-            return op;
-        }
-
-        private PlayerBase EraseDuplicates(PlayerBase pb)
-        {
-            for (int k = 0; k < pb.BuildingsCapabilities.Count-1; k++)
-            {
-                if (pb.BuildingsCapabilities[k].GetType().ToString().Equals(pb.BuildingsCapabilities[pb.BuildingsCapabilities.Count - 1].GetType().ToString()))
-                {
-                    pb.BuildingsCapabilities.RemoveAt(pb.BuildingsCapabilities.Count - 1);
+                    Orders.Remove(item);
+                    break;
                 }
             }
-            return pb;
+            Orders.Add(order);
+        }
+
+        public void OnBuildCommand(object source, BuildCommandEventArgs e)
+        {
+            Build(e.Type, e.Coords);
+        }
+
+        public void Build(string type, Point coords)
+        {
+            if (this.PlayerBase.Build(type, coords))
+            {
+                UIMessage(this, new StringEventArgs() { Msg = string.Format("{0} built", type) });
+            }                        
+            if (NewUpdate != null)
+            {
+                NewUpdate(this, new EventArgs());
+            }
+        }        
+
+        public void OnTrainCommand(object source, BuildCommandEventArgs e)
+        {
+            if (this.PlayerBase.Train(e.Type, e.Coords))
+            {
+                PlayerBase.Units[PlayerBase.Units.Count - 1].UnitDestroyed += OnUnitDestroyed;
+                UIMessage(this, new StringEventArgs() { Msg = string.Format("{0} trained", e.Type) });
+            }
+        }
+
+        public void OnUnitDestroyed(object source, EventArgs e)
+        {
+            foreach (IOrder item in Orders)
+            {
+                if (source == item.Unit)
+                {
+                    ordersToRemove.Add(item);
+                    break;
+                }
+            }
+            foreach (IOrder item in Orders)
+            {
+                try
+                {
+                    var j = (Attack)item;
+                    if (source == j.Target)
+                    {
+                        ordersToRemove.Add(item);                        
+                    }
+                }
+                catch (Exception)
+                {
+                }
+
+            }
+            PlayerBase.Units.Remove((IUnit)source);
+            IUnit k = (IUnit)source;
+            PlayerBase.map.Data[k.position.y][k.position.x].Use = "";
+            k.UnitDestroyed -= OnUnitDestroyed;
+
+            UIMessage(this, new StringEventArgs() { Msg = string.Format("{0} destroyed", k.Type) });
+            if (NewUpdate != null)
+            {
+                NewUpdate(this, new EventArgs());
+            }
         }
     }
 }

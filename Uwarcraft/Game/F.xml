@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UIBLC xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <buildingTypes>
+    <string>Farm</string>
+    <string>Barack</string>
+    <string>BowWorkshop</string>
+    <string>Tower</string>
+  </buildingTypes>
+  <unitTypes>
+    <string>Peasant</string>
+    <string>Archer</string>
+  </unitTypes>
+</UIBLC>

@@ -19,7 +19,7 @@ namespace Uwarcraft.Units
             Complete = false;
             Life = 75;
             Location = location;
-
+            Type = "Tower";
         }
 
         public override void StartBuilding()

@@ -21,7 +21,7 @@ namespace Uwarcraft.Units
             Complete = false; 
             Life = 100;
             Location = location;
-
+            Type = "Barrack";
         }
 
         public override void StartBuilding()

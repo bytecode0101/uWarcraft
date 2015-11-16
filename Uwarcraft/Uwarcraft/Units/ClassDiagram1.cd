@@ -35,13 +35,6 @@
       <FileName>Units\BuildArcherCapability.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Uwarcraft.Units.PlayerBase">
-    <Position X="16.75" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
-      <FileName>Units\PlayerBase.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="Uwarcraft.Units.Peasant">
     <Position X="17" Y="4.5" Width="1.5" />
     <TypeIdentifier>
@@ -119,14 +112,18 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Uwarcraft.Game.StateMachine.PlayState">
-    <Position X="19.5" Y="0.5" Width="1.5" />
+    <Position X="21.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>EAAAEAAAAAAAAAQAAAAAAACAAAAAACAAAAAAQAAQAAI=</HashCode>
+      <HashCode>AAAAEAAAAAAAAAQAAAAAAACQAAAAACAAAAAAQAAAAAI=</HashCode>
       <FileName>Game\StateMachine\PlayState.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Field Name="playerBase" />
-    </ShowAsAssociation>
+  </Class>
+  <Class Name="Uwarcraft.Units.PlayerBase">
+    <Position X="16.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABABIIAgAAAAAAAAAAAAAAEAgAIAEAAEAAAAAAA=</HashCode>
+      <FileName>Units\PlayerBase.cs</FileName>
+    </TypeIdentifier>
   </Class>
   <Interface Name="Uwarcraft.Units.IUnit">
     <Position X="14.5" Y="0.75" Width="1.5" />
