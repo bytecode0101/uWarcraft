@@ -9,6 +9,7 @@ namespace Uwarcraft.Game.StateMachine
     public class PlayState : AbstractState
     {
         public event EventHandler NewUpdate;
+        public event EventHandler <StringEventArgs> UIMessage;
 
         public override event StateFinished StateFinishedEventHandler;
         //public event EventHandler<BuildCommandEventArgs> BuildCommand;
@@ -69,18 +70,22 @@ namespace Uwarcraft.Game.StateMachine
 
         public void Build(string type, Point coords)
         {
-            this.PlayerBase.Build(type, coords);
+            if (this.PlayerBase.Build(type, coords))
+            {
+                UIMessage(this, new StringEventArgs() { Msg = string.Format("{0} built", type) });
+            }                        
             if (NewUpdate != null)
             {
                 NewUpdate(this, new EventArgs());
             }
-        }
+        }        
 
         public void OnTrainCommand(object source, BuildCommandEventArgs e)
         {
             if (this.PlayerBase.Train(e.Type, e.Coords))
             {
                 PlayerBase.Units[PlayerBase.Units.Count - 1].UnitDestroyed += OnUnitDestroyed;
+                UIMessage(this, new StringEventArgs() { Msg = string.Format("{0} trained", e.Type) });
             }
         }
 
@@ -110,6 +115,11 @@ namespace Uwarcraft.Game.StateMachine
 
             }
             PlayerBase.Units.Remove((IUnit)source);
+            IUnit k = (IUnit)source;
+            PlayerBase.map.Data[k.position.y][k.position.x].Use = "";
+            k.UnitDestroyed -= OnUnitDestroyed;
+
+            UIMessage(this, new StringEventArgs() { Msg = string.Format("{0} destroyed", k.Type) });
             if (NewUpdate != null)
             {
                 NewUpdate(this, new EventArgs());

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Uwarcraft.Game;
 
 namespace Uwarcraft.Units
 {
@@ -15,12 +16,12 @@ namespace Uwarcraft.Units
         int unitDamageSuffered { get; set; }
         int unitAttackPower { get; set; }
         int UnitRange { get; set; }
-        Game.Point position { get; set; }
+        Point position { get; set; }
         string Type { get; set; }
 
         void Attack(IUnit target);
         void Attack(AbstractBuilding target);
-        void Move(int i);
+        void Move(int i, Map map);
         void Stop();
         void TakeHit(int attackPower);
     }

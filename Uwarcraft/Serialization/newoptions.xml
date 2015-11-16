@@ -9,19 +9,10 @@
   <BarrackBuildings>
     <string>BowWorkshop</string>
   </BarrackBuildings>
-  <BarrackUnits>
-    <string>Clubman</string>
-  </BarrackUnits>
   <BowWorkshopBuildings>
     <string>Tower</string>
   </BowWorkshopBuildings>
   <BowWorkshopUnits>
     <string>Archer</string>
   </BowWorkshopUnits>
-  <TowerBuildings>
-    <string>Blacksmith</string>
-  </TowerBuildings>
-  <BlacksmithUnits>
-    <string>SwordFighter</string>
-  </BlacksmithUnits>
 </NewOptions>

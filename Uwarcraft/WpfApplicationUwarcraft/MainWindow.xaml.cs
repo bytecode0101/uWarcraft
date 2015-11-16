@@ -29,7 +29,7 @@ namespace WpfApplicationUwarcraft
     {
         public event EventHandler<BuildCommandEventArgs> BuildCommand;
         public event EventHandler<BuildCommandEventArgs> TrainCommand;
-        private static Logger log = LogManager.GetCurrentClassLogger(); 
+        private static Logger log = LogManager.GetCurrentClassLogger();
         Game g;
         PlayState st;
         UIBLC denumiri;
@@ -38,22 +38,17 @@ namespace WpfApplicationUwarcraft
         {
             InitializeComponent();
             log.Trace("MainWindow initialized");
-            //Thread states = new Thread(new ThreadStart(runGame));
-            //states.Start();
             denumiri = new Uwarcraft.Units.UIBLC();
             denumiri = XMLWork.XMLDeserialization();
             g = new Game(new PlayState());
             st = (PlayState)g.CurrentState;
-            //Thread gRun = new Thread(st.Run);
-            //gRun.Start();
             st.Run();
-            //var buildings = st.PlayerBase.Buildings;
-            //var units = st.PlayerBase.Units;
             BuildCommand += st.OnBuildCommand;
             TrainCommand += st.OnTrainCommand;
             st.NewUpdate += OnNewUpdate;
+            st.UIMessage += OnMsgUpdate;
+            st.PlayerBase.UIMessage += OnMsgUpdate;
             Console.ReadLine();
-
 
             ShowBuildMenu();
             ShowTrainMenu();
@@ -129,9 +124,16 @@ namespace WpfApplicationUwarcraft
         private void button_Click(object sender, RoutedEventArgs e)
         {
             var btn = (Button)e.OriginalSource;
-            int x = Int32.Parse(textBox1.Text);
-            int y = Int32.Parse(textBox2.Text);
-            OnBuildCommand(btn.Name, new Uwarcraft.Game.Point(x, y));
+            try
+            {
+                int x = Int32.Parse(textBox1.Text);
+                int y = Int32.Parse(textBox2.Text);
+                OnBuildCommand(btn.Name, new Uwarcraft.Game.Point(x, y));
+            }
+            catch (Exception)
+            {
+                msgBlock.Text = "please input 2 ints for coords if you are trying to build/train something ";
+            }
         }
 
         public void OnNewUpdate(object source, EventArgs e)
@@ -167,9 +169,18 @@ namespace WpfApplicationUwarcraft
         {
             e.Handled = true;
             var btn = (Button)e.OriginalSource;
-            int x = Int32.Parse(textBox1.Text);
-            int y = Int32.Parse(textBox2.Text);
-            OnTrainCommand(btn.Name, new Uwarcraft.Game.Point(x, y));
+            try
+            {
+                int x = Int32.Parse(textBox1.Text);
+                int y = Int32.Parse(textBox2.Text);
+                OnTrainCommand(btn.Name, new Uwarcraft.Game.Point(x, y));
+            }
+            catch (Exception)
+            {
+                msgBlock.Text = "please input 2 ints for coords if you are trying to build/train something";
+            }
+
+
         }
 
         public void OnTrainCommand(string type, Uwarcraft.Game.Point coords)
@@ -194,11 +205,19 @@ namespace WpfApplicationUwarcraft
         private void buta_click(object sender, RoutedEventArgs e)
         {
             var v = (PlayState)g.CurrentState;
-            int x = Int32.Parse(textBox1.Text);
+            try
+            {
+int x = Int32.Parse(textBox1.Text);
             int y = Int32.Parse(textBox2.Text);
             Uwarcraft.Units.IOrder att = new Attack(st.PlayerBase.Units[x], v.Map, st.PlayerBase.Units[y]);
             v.AddAttack(att);
             ShowOrders();
+            }
+            catch (Exception)
+            {
+                msgBlock.Text = "please input 2 ints for indexes of units that exists";
+            }
+            
             e.Handled = true;
         }
 
@@ -243,6 +262,11 @@ namespace WpfApplicationUwarcraft
         {
             st.Run();
             e.Handled = true;
+        }
+
+        public void OnMsgUpdate(object source,StringEventArgs e)
+        {
+            msgBlock.Text = e.Msg;
         }
     }
 

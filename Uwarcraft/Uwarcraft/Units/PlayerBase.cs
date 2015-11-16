@@ -7,6 +7,8 @@ namespace Uwarcraft.Units
 {
     public class PlayerBase
     {
+        public event EventHandler<StringEventArgs> UIMessage;
+
         public List<AbstractBuilding> Buildings { get; set; }
         public List<IUnit> Units { get; set; }
         public List<AbstractBuildBuildingCapability> BuildingsCapabilities { get; set; }
@@ -20,7 +22,7 @@ namespace Uwarcraft.Units
         private BuildingFactory factory;
         private UnitFactory unitFactory;
         private AddNewOptions newOptions;
-        private Map map;
+        public Map map;
 
         public PlayerBase(Map _map)
         {
@@ -50,7 +52,7 @@ namespace Uwarcraft.Units
             newOptions = new AddNewOptions();
         }
 
-        public void Build(string buildingType, Game.Point coords)
+        public bool Build(string buildingType, Game.Point coords)
         {
             if (map.Data[coords.y][coords.x].Use==""&& map.isValidForUnit(coords))
             {
@@ -79,9 +81,25 @@ namespace Uwarcraft.Units
                         }
                     }
                     CountBuildings[buildingType]++;
-                    
+                    return true;
                 }
             }
+            else
+            {
+                if (map.Data[coords.y][coords.x].Use != "")
+                {
+                    UIMessage(this, new StringEventArgs() { Msg = string.Format("MapCel occupied by {0}",map.Data[coords.y][coords.x].Use) });
+                }
+                else if (map.Data[coords.y][coords.x].Height > 0)
+                    {
+                    UIMessage(this, new StringEventArgs() { Msg = "can't build on mountain" });
+                }
+                else if (map.Data[coords.y][coords.x].Height < 0)
+                {
+                    UIMessage(this, new StringEventArgs() { Msg = "can't build on water" });
+                }
+            }
+            return false;
         }
 
         public bool Train(string unitType, Game.Point coords)
@@ -95,6 +113,21 @@ namespace Uwarcraft.Units
                     map.Data[coords.y][coords.x].Use = "unit";                    
                     CountUnits[unitType]++;
                     return true;
+                }
+            }
+            else
+            {
+                if (map.Data[coords.y][coords.x].Use != "")
+                {
+                    UIMessage(this, new StringEventArgs() { Msg = string.Format("MapCel occupied by {0}", map.Data[coords.y][coords.x].Use) });
+                }
+                else if (map.Data[coords.y][coords.x].Height > 0)
+                {
+                    UIMessage(this, new StringEventArgs() { Msg = "can't train on mountain" });
+                }
+                else if (map.Data[coords.y][coords.x].Height < 0)
+                {
+                    UIMessage(this, new StringEventArgs() { Msg = "can't train on water" });
                 }
             }
             return false;

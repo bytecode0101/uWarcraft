@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Uwarcraft.Game;
 
 namespace Uwarcraft.Units
 {
@@ -13,11 +14,11 @@ namespace Uwarcraft.Units
         public int unitDamageSuffered { get; set; }
         public int unitAttackPower { get; set; }
         public int UnitRange { get; set; }
-        public Game.Point position { get; set; }
+        public Point position { get; set; }
         public string Type { get; set; }
         public event EventHandler UnitDestroyed;
 
-        public Archer(Game.Point xy)
+        public Archer(Point xy)
         {
             position = xy;
             unitHealth = 30;
@@ -49,12 +50,14 @@ namespace Uwarcraft.Units
             //}
         }
 
-        public void Move(int i)
+        public void Move(int i, Map map)
         {
             int[] a = new int[8] { 1, 1, 1, 0, 0, -1, -1, -1 };
             int[] b = new int[8] { -1, 0, 1, -1, 1, -1, 0, 1 };
+            map.Data[position.y][position.x].Use = "";
             position.x += a[i];
             position.y += b[i];
+            map.Data[position.y][position.x].Use = "Archer";
         }
 
         public void Stop()

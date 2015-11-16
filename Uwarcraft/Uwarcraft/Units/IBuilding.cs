@@ -13,8 +13,8 @@ namespace Uwarcraft.Units
     {
         //event BuildingComplete BuildingComplete;
 
-        List<AbstractBuildUnitCapability> BuildUnitCapabilities { get; set; }
-        List<AbstractBuildBuildingCapability> BuildBuildingsCapabilities { get; set; }
+        //List<AbstractBuildUnitCapability> BuildUnitCapabilities { get; set; }
+        //List<AbstractBuildBuildingCapability> BuildBuildingsCapabilities { get; set; }
         bool Complete { get; set; }
         void StartBuilding();
     }

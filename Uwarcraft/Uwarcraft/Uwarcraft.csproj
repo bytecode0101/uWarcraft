@@ -85,8 +85,10 @@
     <Compile Include="Units\BuildingFactory.cs" />
     <Compile Include="Units\BuildTowerCapability.cs" />
     <Compile Include="Units\events.cs" />
+    <Compile Include="Units\IBuildable.cs" />
     <Compile Include="Units\IOrder.cs" />
     <Compile Include="Units\Pathfinding.cs" />
+    <Compile Include="Units\StringEventArgs.cs" />
     <Compile Include="Units\Tower.cs" />
     <Compile Include="Units\BuildPeasantCapability.cs" />
     <Compile Include="Units\Farm.cs" />

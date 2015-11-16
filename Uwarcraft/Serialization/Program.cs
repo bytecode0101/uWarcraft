@@ -31,11 +31,11 @@ namespace Serialization
             options.FarmBuildings = new string[1] { "Barrack" };
             options.FarmUnits = new string[1] { "Peasant" };
             options.BarrackBuildings = new string[1] { "BowWorkshop" };
-            options.BarrackUnits = new string[1] { "Clubman" };
+            //options.BarrackUnits = new string[1] { "Clubman" };
             options.BowWorkshopBuildings = new string[1] { "Tower" };
             options.BowWorkshopUnits = new string[1] { "Archer" };
-            options.TowerBuildings = new string[1] { "Blacksmith" };
-            options.BlacksmithUnits = new string[1] { "SwordFighter" };
+            //options.TowerBuildings = new string[1] { "Blacksmith" };
+            //options.BlacksmithUnits = new string[1] { "SwordFighter" };
             Serialize(options);
             //var map = new Map();
             //map = map.Run(16, 16);

@@ -38,35 +38,35 @@ namespace Uwarcraft.Units
                     Point next = way[way.Count-1];
                     if ((next.x-Unit.position.x==1)&&(next.y - Unit.position.y == -1))
                     {
-                        Unit.Move(0);
+                        Unit.Move(0,Map);
                     }
                     if ((next.x - Unit.position.x == 1) && (next.y - Unit.position.y == 0))
                     {
-                        Unit.Move(1);
+                        Unit.Move(1,Map);
                     }
                     if ((next.x - Unit.position.x == 1) && (next.y - Unit.position.y == 1))
                     {
-                        Unit.Move(2);
+                        Unit.Move(2,Map);
                     }
                     if ((next.x - Unit.position.x == 0) && (next.y - Unit.position.y == -1))
                     {
-                        Unit.Move(3);
+                        Unit.Move(3,Map);
                     }
                     if ((next.x - Unit.position.x == 0) && (next.y - Unit.position.y == 1))
                     {
-                        Unit.Move(4);
+                        Unit.Move(4,Map);
                     }
                     if ((next.x - Unit.position.x == -1) && (next.y - Unit.position.y == -1))
                     {
-                        Unit.Move(5);
+                        Unit.Move(5,Map);
                     }
                     if ((next.x - Unit.position.x == -1) && (next.y - Unit.position.y == 0))
                     {
-                        Unit.Move(6);
+                        Unit.Move(6,Map);
                     }
                     if ((next.x - Unit.position.x == -1) && (next.y - Unit.position.y == 1))
                     {
-                        Unit.Move(7);
+                        Unit.Move(7,Map);
                     }
                 }
             }
