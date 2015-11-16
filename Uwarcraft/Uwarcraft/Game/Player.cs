@@ -2,6 +2,6 @@
 {
     class Player
     {
-        public PlayerMap ownMap; 
+        //public PlayerMap ownMap; 
     }
 }

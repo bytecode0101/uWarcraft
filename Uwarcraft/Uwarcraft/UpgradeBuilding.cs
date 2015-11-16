@@ -2,7 +2,7 @@
 {
     public class UpgradeBuilding
     {
-        private int cost;
+        //private int cost;
 
         public void upgradeBuilding()
         {

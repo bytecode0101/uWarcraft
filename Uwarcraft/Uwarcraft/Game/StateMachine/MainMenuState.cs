@@ -1,60 +1,47 @@
 ﻿using System;
-using Uwarcraft.Game;
 
 
 namespace Uwarcraft.Game.StateMachine
 {
     public class MainMenuState : AbstractState
     {
-        private AbstractState NewGameState;
-        private AbstractState ContinueGameState;
-        private AbstractState HelpState;
-        
-
-        public MainMenuState()
-        {
-            NewGameState = new NewGameState();
-            ContinueGameState = new ContinueGameState();
-            HelpState = new HelpGameState();
-
-            Game DemoGame = new Game();
-
-        }
-
+        public override event StateFinished StateFinishedEventHandler;
+        AbstractState nextState;
         public override void Run()
-        {
-            
-            Console.WriteLine("State: " + this.GetType().ToString());
-
+        {            
+            Console.WriteLine("Main menu, 1=NewGame, 2=ContinueGame, 3=Help");
             var ceva = Console.ReadLine();
-            if (ceva == "1")
+            switch (ceva)
             {
-
-                GoToNewGameState();
+                case "1":
+                    {
+                        nextState = new NewGameState();
+                        //game.Do();
+                        break;
+                    }
+                case "2":
+                    {
+                        nextState = new ContinueGameState();
+                        //game.Do();
+                        break;
+                    }
+                case "3":
+                    {
+                        nextState = new HelpGameState();
+                        //game.Do();
+                        break;
+                    }
+                default:
+                    {
+                        Run();
+                        break;
+                    }
             }
-            else
+            if (StateFinishedEventHandler != null)
             {
-                if (ceva == "2")
-                {
-                    GoToHelpGameState();
-                }
+                StateFinishedEventHandler.Invoke(this, new StateEventArgs() { NextState = nextState });
             }
-
-        }
-
-        public void GoToNewGameState()
-        {
-            NewGameState.Run();
-        }
-
-        public void ContinueGame()
-        {
-
-        }
-        public void GoToHelpGameState()
-        {
-            HelpState.Run();
-        }
+        }       
 
     }
 

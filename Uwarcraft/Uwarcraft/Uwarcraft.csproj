@@ -31,6 +31,26 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CSVCom, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WpfApplicationUwarcraft\bin\Debug\CSVCom.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,40 +61,78 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Buildings\BasicBuildings\Farm.cs" />
+    <Compile Include="Game\FinderBot.cs" />
+    <Compile Include="Game\MapCell.cs" />
+    <Compile Include="Game\PathFinder.cs" />
+    <Compile Include="Game\StateMachine\Build.cs" />
+    <Compile Include="Game\StateMachine\BuildCommandEventArgs.cs" />
+    <Compile Include="Game\StateMachine\PlayState.cs" />
+    <Compile Include="Units\AbstractBuildBuildingCapability.cs" />
+    <Compile Include="Units\AbstractBuildUnitCapability.cs" />
+    <Compile Include="Units\AddNewOptions.cs" />
+    <Compile Include="Units\Archer.cs" />
+    <Compile Include="Units\Attack.cs" />
+    <Compile Include="Units\BowWorkshop.cs" />
+    <Compile Include="Units\BuildArcherCapability.cs" />
+    <Compile Include="Units\BuildBarracksCapability.cs" />
+    <Compile Include="Units\BuildBowWorkshopCapability.cs" />
+    <Compile Include="Units\BuildFarmCapability.cs" />
     <Compile Include="Buildings\BuildingUpgrades\BuildingUpgradeDecorator.cs" />
     <Compile Include="Buildings\BuildingUpgrades\FirstLevelUpgrade.cs" />
     <Compile Include="Buildings\BuildingUpgrades\SeconLevelUpgrade.cs" />
-    <Compile Include="Buildings\Interfaces\AbstractBuilding.cs" />
     <Compile Include="Buildings\Interfaces\BuildingCost.cs" />
-    <Compile Include="Buildings\WarBuildings\Barrack.cs" />
     <Compile Include="Buildings\Interfaces\IBuilding.cs" />
-    <Compile Include="Buildings\WarBuildings\Tower.cs" />
-    <Compile Include="Game\Game.cs" />
+    <Compile Include="Units\BuildingFactory.cs" />
+    <Compile Include="Units\BuildTowerCapability.cs" />
+    <Compile Include="Units\events.cs" />
+    <Compile Include="Units\IBuildable.cs" />
+    <Compile Include="Units\IOrder.cs" />
+    <Compile Include="Units\Pathfinding.cs" />
+    <Compile Include="Units\StringEventArgs.cs" />
+    <Compile Include="Units\Tower.cs" />
+    <Compile Include="Units\BuildPeasantCapability.cs" />
+    <Compile Include="Units\Farm.cs" />
     <Compile Include="Game\Map.cs" />
     <Compile Include="Game\Player.cs" />
-    <Compile Include="Game\StateMachine\AbstractState.cs" />
+    <Compile Include="Game\Point.cs" />
     <Compile Include="Game\StateMachine\ContinueGameState.cs" />
+    <Compile Include="Game\StateMachine\Game.cs" />
     <Compile Include="Game\StateMachine\HelpGameState.cs" />
     <Compile Include="Game\StateMachine\MainMenuState.cs" />
     <Compile Include="Game\StateMachine\NewGameState.cs" />
+    <Compile Include="Game\StateMachine\AbstractState.cs" />
+    <Compile Include="Game\StateMachine\StateEventArgs.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="MainBase.cs" />
     <Compile Include="CreateMap.cs" />
     <Compile Include="CreateBuilding.cs" />
-    <Compile Include="BaseUnit.cs" />
+    <Compile Include="Units\BaseUnit.cs" />
     <Compile Include="IssueOrder.cs" />
     <Compile Include="Game\PlayerMap.cs" />
+    <Compile Include="Units\AbstractBuilding.cs" />
+    <Compile Include="Units\Peasant.cs" />
+    <Compile Include="Units\PlayerBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Units\IBuilding.cs" />
+    <Compile Include="Units\IUnit.cs" />
+    <Compile Include="Units\Barracks.cs" />
+    <Compile Include="Units\UnitFactory.cs" />
+    <Compile Include="Units\XMLWork.cs" />
     <Compile Include="UpgradeBuilding.cs" />
     <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />
+    <None Include="packages.config" />
     <None Include="Uml\ClassDiagram1.cd" />
+    <None Include="Units\ClassDiagram1.cd" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Units\" />
+    <Folder Include="Buildings\BasicBuildings\" />
+    <Folder Include="Buildings\WarBuildings\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Game\StateMachine\F.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

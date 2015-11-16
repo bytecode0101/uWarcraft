@@ -5,7 +5,7 @@
     /// </summary>
     public class MainBase : CreateBuilding
     {
-        private int captured;
+        //private int captured;
 
         public void constructUnits()
         {

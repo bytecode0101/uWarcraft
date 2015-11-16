@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Uwarcraft.Units.AbstractBuildUnitCapability">
+    <Position X="2.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Units\AbstractBuildUnitCapability.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Uwarcraft.Units.BuildFarmCapability">
+    <Position X="2.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Units\BuildFarmCapability.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Uwarcraft.Units.BuildBarrackCapability">
+    <Position X="0.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Units\BuildBarracksCapability.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Uwarcraft.Units.BuildPeasantCapability">
+    <Position X="3.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Units\BuildPeasantCapability.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Uwarcraft.Units.BuildArcherCapability">
+    <Position X="1.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Units\BuildArcherCapability.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Uwarcraft.Units.Peasant">
+    <Position X="17" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAQAAAAAEAIABAAKAAAAAAMAAAAAQAAAA=</HashCode>
+      <FileName>Units\Peasant.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Uwarcraft.Units.AbstractBuildBuildingCapability">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAABAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Units\AbstractBuildBuildingCapability.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Uwarcraft.Units.AbstractBuilding">
+    <Position X="8" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAACAAAAAIAAAIAAAAAAAAAAAAAEAgCAAABAAA=</HashCode>
+      <FileName>Units\AbstractBuilding.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="BuildBuildingsCapabilities" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Uwarcraft.Units.Farm">
+    <Position X="7.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Units\Farm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Uwarcraft.Units.Barrack">
+    <Position X="9.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Units\Barracks.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Uwarcraft.Units.BowWorkshop">
+    <Position X="11.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Units\BowWorkshop.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Uwarcraft.Units.Archer">
+    <Position X="15.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAQAAAAAEAIABAAKAAAAAAMAAAAAQAAAA=</HashCode>
+      <FileName>Units\Archer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Uwarcraft.Units.Tower">
+    <Position X="13" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Units\Tower.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Uwarcraft.Units.BuildBowWorkshopCapability">
+    <Position X="4" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Units\BuildBowWorkshopCapability.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Uwarcraft.Units.BuildTowerCapability">
+    <Position X="5.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Units\BuildTowerCapability.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Uwarcraft.Game.StateMachine.PlayState">
+    <Position X="21.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAQAAAAAAACQAAAAACAAAAAAQAAAAAI=</HashCode>
+      <FileName>Game\StateMachine\PlayState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Uwarcraft.Units.PlayerBase">
+    <Position X="16.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABABIIAgAAAAAAAAAAAAAAEAgAIAEAAEAAAAAAA=</HashCode>
+      <FileName>Units\PlayerBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Uwarcraft.Units.IUnit">
+    <Position X="14.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAQAAAAAEAIABAAKAAAAAAMAAAAAQAAAA=</HashCode>
+      <FileName>Units\IUnit.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Uwarcraft.Units.IBuilding">
+    <Position X="9.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAEAgCAAAAAAA=</HashCode>
+      <FileName>Units\IBuilding.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Delegate Name="Uwarcraft.Units.BuildingComplete">
+    <Position X="9.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Units\AbstractBuilding.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

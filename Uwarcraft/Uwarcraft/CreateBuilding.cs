@@ -3,10 +3,10 @@
     public class CreateBuilding
     {
 
-        private uint resourcesRequired;
-        private bool isBuilt;
-        private int validPosition;
-        private int health;
+        //private uint resourcesRequired;
+        //private bool isBuilt;
+        //private int validPosition;
+        //private int health;
 
         public void startBuilding()
         {
