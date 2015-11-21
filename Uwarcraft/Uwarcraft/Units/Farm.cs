@@ -8,7 +8,7 @@ namespace Uwarcraft.Units
     public class Farm : AbstractBuilding
     {
         public override event BuildingComplete BuildingComplete;
-
+        public override event EventHandler Destroyed;
         //public List<AbstractBuildUnitCapability> BuildUnitCapabilities { get; set; }
         //public List<AbstractBuildBuildingCapability> BuildBuildingsCapabilities { get; set; }
         //public bool Complete { get; set; }
@@ -20,7 +20,7 @@ namespace Uwarcraft.Units
             //BuildBuildingsCapabilities.Add(new BuildBarrackCapability());
             Complete = false;
             Life = 100;
-            Location = location;
+            Position = location;
             Type = "Farm";
         }
 

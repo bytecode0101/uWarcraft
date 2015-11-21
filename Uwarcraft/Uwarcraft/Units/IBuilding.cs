@@ -7,15 +7,8 @@ using System.Threading.Tasks;
 
 namespace Uwarcraft.Units
 {
-    //public delegate void BuildingComplete();
-
-    public interface IBuilding
+    public interface IBuilding : IBuildable
     {
-        //event BuildingComplete BuildingComplete;
-
-        //List<AbstractBuildUnitCapability> BuildUnitCapabilities { get; set; }
-        //List<AbstractBuildBuildingCapability> BuildBuildingsCapabilities { get; set; }
-        bool Complete { get; set; }
         void StartBuilding();
     }
 }

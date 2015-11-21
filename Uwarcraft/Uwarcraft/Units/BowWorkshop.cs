@@ -8,6 +8,7 @@ namespace Uwarcraft.Units
     public class BowWorkshop : AbstractBuilding
     {
         public override event BuildingComplete BuildingComplete;
+        public override event EventHandler Destroyed;
 
         //public List<AbstractBuildUnitCapability> BuildUnitCapabilities { get; set; }
         //public List<AbstractBuildBuildingCapability> BuildBuildingsCapabilities { get; set; }
@@ -15,13 +16,13 @@ namespace Uwarcraft.Units
 
         public BowWorkshop(Game.Point location)
         {
-            BuildBuildingsCapabilities = new List<AbstractBuildBuildingCapability>();
-            BuildUnitCapabilities = new List<AbstractBuildUnitCapability>();
-            BuildBuildingsCapabilities.Add(new BuildTowerCapability());
-            BuildUnitCapabilities.Add(new BuildArcherCapability());
+            //BuildBuildingsCapabilities = new List<AbstractBuildBuildingCapability>();
+            //BuildUnitCapabilities = new List<AbstractBuildUnitCapability>();
+            //BuildBuildingsCapabilities.Add(new BuildTowerCapability());
+            //BuildUnitCapabilities.Add(new BuildArcherCapability());
             Complete = false;
             Life = 100;
-            Location = location;
+            Position = location;
             Type = "BowWorkshop";
         }
 

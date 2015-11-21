@@ -44,7 +44,7 @@ namespace TestUwarcraft
             OnBuildCommand("Barrack", new Point(10, 17));
             Assert.AreEqual(st.PlayerBase.CountBuildings["Barrack"], 1);
             Assert.AreEqual(st.PlayerBase.Buildings.Count, 2);
-            Assert.AreEqual(st.PlayerBase.Buildings[1].Location.y,17);
+            Assert.AreEqual(st.PlayerBase.Buildings[1].Position.y,17);
         }
 
         //[Test]

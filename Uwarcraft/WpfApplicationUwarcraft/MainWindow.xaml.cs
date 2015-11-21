@@ -57,7 +57,7 @@ namespace WpfApplicationUwarcraft
             {
                 TextBlock item = new TextBlock();
                 item.Name = i.ToString();
-                item.Text = string.Format("{0} {1} {2} {3} {4}", st.PlayerBase.Buildings[i].Type, st.PlayerBase.Buildings[i].Life, st.PlayerBase.Buildings[i].DamageTaken, st.PlayerBase.Buildings[i].Location.ToString(), st.PlayerBase.Buildings[i].Complete.ToString());
+                item.Text = string.Format("{0} {1} {2} {3} {4}", st.PlayerBase.Buildings[i].Type, st.PlayerBase.Buildings[i].Life, st.PlayerBase.Buildings[i].DamageTaken, st.PlayerBase.Buildings[i].Position.ToString(), st.PlayerBase.Buildings[i].Complete.ToString());
                 stack3.Children.Add(item);
                 log.Trace("showing Building Options");
             }
@@ -158,7 +158,7 @@ namespace WpfApplicationUwarcraft
                 {
                     TextBlock item = new TextBlock();
                     item.Name = "b" + i.ToString();
-                    item.Text = string.Format("{0} {1} {2} {3} {4}", st.PlayerBase.Buildings[i].Type, st.PlayerBase.Buildings[i].Life, st.PlayerBase.Buildings[i].DamageTaken, st.PlayerBase.Buildings[i].Location.ToString(), st.PlayerBase.Buildings[i].Complete.ToString());
+                    item.Text = string.Format("{0} {1} {2} {3} {4}", st.PlayerBase.Buildings[i].Type, st.PlayerBase.Buildings[i].Life, st.PlayerBase.Buildings[i].DamageTaken, st.PlayerBase.Buildings[i].Position.ToString(), st.PlayerBase.Buildings[i].Complete.ToString());
                     stack3.Children.Add(item);
                     textBox3.Text = string.Format("Farm{0}  Barrack{1}  BowWorkshop{2}  Tower{3}", st.PlayerBase.CountBuildings["Farm"], st.PlayerBase.CountBuildings["Barrack"], st.PlayerBase.CountBuildings["BowWorkshop"], st.PlayerBase.CountBuildings["Tower"]);
                 }
@@ -196,7 +196,7 @@ namespace WpfApplicationUwarcraft
                 {
                     TextBlock item = new TextBlock();
                     item.Name = "u" + i.ToString();
-                    item.Text = string.Format("{0} {1} {2} {3} {4}", st.PlayerBase.Units[i].Type, st.PlayerBase.Units[i].unitHealth, st.PlayerBase.Units[i].unitDamageSuffered, st.PlayerBase.Units[i].position.ToString(), st.PlayerBase.Units[i].UnitRange);
+                    item.Text = string.Format("{0} {1} {2} {3} {4}", st.PlayerBase.Units[i].Type, st.PlayerBase.Units[i].Life, st.PlayerBase.Units[i].DamageTaken, st.PlayerBase.Units[i].Position.ToString(), st.PlayerBase.Units[i].Range);
                     stack4.Children.Add(item);
                 }
             }
@@ -230,7 +230,7 @@ int x = Int32.Parse(textBox1.Text);
                 {
                     TextBlock item = new TextBlock();
                     item.Name = "u" + i.ToString();
-                    item.Text = string.Format("{0} {1} {2} {3} {4}", st.PlayerBase.Units[i].Type, st.PlayerBase.Units[i].unitHealth, st.PlayerBase.Units[i].unitDamageSuffered, st.PlayerBase.Units[i].position.ToString(), st.PlayerBase.Units[i].UnitRange);
+                    item.Text = string.Format("{0} {1} {2} {3} {4}", st.PlayerBase.Units[i].Type, st.PlayerBase.Units[i].Life, st.PlayerBase.Units[i].DamageTaken, st.PlayerBase.Units[i].Position.ToString(), st.PlayerBase.Units[i].Range);
                     stack4.Children.Add(item);
                 }
             }
@@ -249,7 +249,7 @@ int x = Int32.Parse(textBox1.Text);
                     TextBlock item = new TextBlock();
                     item.Name = "o" + i.ToString();
                     var j = (Attack)st.Orders[i];
-                    item.Text = string.Format("{0} {1} -> {2} {3} ", j.Unit.Type, j.Unit.position, j.Target.Type, j.Target.position);
+                    item.Text = string.Format("{0} {1} -> {2} {3} ", j.Unit.Type, j.Unit.Position, j.Target.Type, j.Target.Position);
                     stack5.Children.Add(item);
                 }
             }

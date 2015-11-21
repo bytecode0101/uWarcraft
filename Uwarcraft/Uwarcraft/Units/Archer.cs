@@ -8,29 +8,30 @@ namespace Uwarcraft.Units
 {
     public class Archer : Units.IUnit
     {
-        public int unitCost { get; set; }
-        public int unitHealth { get; set; }
-        public int unitSpeed { get; set; }
-        public int unitDamageSuffered { get; set; }
-        public int unitAttackPower { get; set; }
-        public int UnitRange { get; set; }
-        public Point position { get; set; }
+        public int Cost { get; set; }
+        public int Life { get; set; }
+        public int Speed { get; set; }
+        public int DamageTaken { get; set; }
+        public int AttackPower { get; set; }
+        public int Range { get; set; }
+        public Point Position { get; set; }
         public string Type { get; set; }
-        public event EventHandler UnitDestroyed;
+        public event EventHandler Destroyed;
+        public bool Complete { get; set; }
 
         public Archer(Point xy)
         {
-            position = xy;
-            unitHealth = 30;
-            unitSpeed = 1;
-            unitAttackPower = 4;
-            UnitRange = 5;
+            Position = xy;
+            Life = 30;
+            Speed = 1;
+            AttackPower = 4;
+            Range = 5;
             Type = "Archer";
         }
 
         public void Attack(IUnit target)
         {
-            target.TakeHit(unitAttackPower);
+            target.TakeHit(AttackPower);
             //if (target.unitDamageSuffered >= target.unitHealth)
             //{
             //    target.unitCost = 0;
@@ -43,7 +44,7 @@ namespace Uwarcraft.Units
 
         public void Attack(AbstractBuilding target)
         {
-            target.TakeHit(unitAttackPower);
+            target.TakeHit(AttackPower);
             //if (target.Life <= target.DamageTaken)
             //{
             //    target = null;
@@ -54,10 +55,10 @@ namespace Uwarcraft.Units
         {
             int[] a = new int[8] { 1, 1, 1, 0, 0, -1, -1, -1 };
             int[] b = new int[8] { -1, 0, 1, -1, 1, -1, 0, 1 };
-            map.Data[position.y][position.x].Use = "";
-            position.x += a[i];
-            position.y += b[i];
-            map.Data[position.y][position.x].Use = "Archer";
+            map.Data[Position.y][Position.x].Use = "";
+            Position.x += a[i];
+            Position.y += b[i];
+            map.Data[Position.y][Position.x].Use = "Archer";
         }
 
         public void Stop()
@@ -67,12 +68,12 @@ namespace Uwarcraft.Units
 
         public void TakeHit(int attackPower)
         {
-            unitDamageSuffered += attackPower;
-            if (unitHealth <= unitDamageSuffered)
+            DamageTaken += attackPower;
+            if (Life <= DamageTaken)
             {
-                if (UnitDestroyed != null)
+                if (Destroyed != null)
                 {
-                    UnitDestroyed(this, new EventArgs());
+                    Destroyed(this, new EventArgs());
                 }
             }
         }

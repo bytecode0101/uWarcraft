@@ -84,7 +84,7 @@ namespace Uwarcraft.Game.StateMachine
         {
             if (this.PlayerBase.Train(e.Type, e.Coords))
             {
-                PlayerBase.Units[PlayerBase.Units.Count - 1].UnitDestroyed += OnUnitDestroyed;
+                PlayerBase.Units[PlayerBase.Units.Count - 1].Destroyed += OnUnitDestroyed;
                 UIMessage(this, new StringEventArgs() { Msg = string.Format("{0} trained", e.Type) });
             }
         }
@@ -116,8 +116,8 @@ namespace Uwarcraft.Game.StateMachine
             }
             PlayerBase.Units.Remove((IUnit)source);
             IUnit k = (IUnit)source;
-            PlayerBase.map.Data[k.position.y][k.position.x].Use = "";
-            k.UnitDestroyed -= OnUnitDestroyed;
+            PlayerBase.map.Data[k.Position.y][k.Position.x].Use = "";
+            k.Destroyed -= OnUnitDestroyed;
 
             UIMessage(this, new StringEventArgs() { Msg = string.Format("{0} destroyed", k.Type) });
             if (NewUpdate != null)

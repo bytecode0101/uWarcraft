@@ -9,18 +9,18 @@ namespace Uwarcraft.Units
     class Barrack : AbstractBuilding 
     {
         public override event BuildingComplete BuildingComplete;
-
+        public override event EventHandler Destroyed;
         
 
         public Barrack(Game.Point location)
         {
-            BuildBuildingsCapabilities = new List<AbstractBuildBuildingCapability>();
-            BuildUnitCapabilities = new List<AbstractBuildUnitCapability>();
-            BuildBuildingsCapabilities.Add(new BuildBowWorkshopCapability());
-            BuildUnitCapabilities.Add(new BuildPeasantCapability());
+            //BuildBuildingsCapabilities = new List<AbstractBuildBuildingCapability>();
+            //BuildUnitCapabilities = new List<AbstractBuildUnitCapability>();
+            //BuildBuildingsCapabilities.Add(new BuildBowWorkshopCapability());
+            //BuildUnitCapabilities.Add(new BuildPeasantCapability());
             Complete = false; 
             Life = 100;
-            Location = location;
+            Position = location;
             Type = "Barrack";
         }
 
